@@ -1,0 +1,2554 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LUNAKRAFT — Creative Direction, Visual Design & Digital Marketing</title>
+<meta name="description" content="LUNAKRAFT is the creative studio of Satish Kumar. Specialized in social media management, graphic design, video editing, brand identity, digital advertisements, posters, brochures, and UI/UX design.">
+<style>
+:root{
+  --bg:#09090f;
+  --bg-soft:#11111c;
+  --panel:#131322;
+  --panel-card:#16162a;
+  --panel-border:#252338;
+  --text:#f5f4f8;
+  --muted:#a29fae;
+  --purple:#a100ff;
+  --purple-glow:rgba(161,0,255,0.35);
+  --purple-light:#c77dff;
+  --gold:#ffbd4a;
+  --gold-glow:rgba(255,189,74,0.3);
+  --teal:#00e5c3;
+  --line:#262438;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:radial-gradient(circle at 85% 6%,rgba(161,0,255,.16),transparent 32%),radial-gradient(circle at 15% 35%,rgba(0,229,195,.06),transparent 28%),var(--bg);
+  color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  overflow-x:hidden;
+  line-height:1.6;
+}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1180px,92vw);margin:auto}
+
+/* NAV */
+.nav{height:72px;display:flex;align-items:center;position:sticky;top:0;z-index:100;background:rgba(9,9,15,.88);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.08);box-shadow:0 4px 20px rgba(0,0,0,.4)}
+.navin{width:100%;display:flex;align-items:center;justify-content:space-between;padding:0 8px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.12em;font-size:16.5px;transition:opacity .2s ease}
+.brand:hover{opacity:.9}
+.brand img{width:36px;height:36px;object-fit:contain}
+.navlinks{display:flex;align-items:center;gap:26px;color:#bbb8c8;font-size:13.5px;font-weight:500;margin:0;padding:0}
+.navlinks a{transition:color .2s ease;position:relative;padding:6px 2px}
+.navlinks a:hover{color:#fff}
+.navlinks a::after{content:'';position:absolute;bottom:0px;left:0;width:0;height:2px;background:var(--purple);border-radius:2px;transition:width .2s ease}
+.navlinks a:hover::after{width:100%}
+.nav-cta{padding:8px 18px!important;border-radius:999px;background:linear-gradient(90deg,#8d00e8,#c72eff);color:#fff!important;font-weight:700;font-size:12.5px;box-shadow:0 4px 16px rgba(161,0,255,.3);transition:transform .2s ease,box-shadow .2s ease!important}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:0 6px 22px rgba(161,0,255,.5)}
+.nav-cta::after{display:none!important}
+
+/* HERO */
+.hero{min-height:calc(100vh - 78px);display:grid;grid-template-columns:1.15fr .85fr;gap:45px;align-items:center;padding:50px 0 85px}
+.eyebrow,.kicker{color:var(--gold);letter-spacing:.18em;text-transform:uppercase;font-size:11.5px;font-weight:800}
+.hero h1{font-size:clamp(52px,7.5vw,104px);line-height:.92;margin:18px 0;letter-spacing:-.06em}
+.gradient{background:linear-gradient(90deg,#ffffff 10%,#d2a8ff 55%,#a100ff 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{max-width:580px;color:var(--muted);font-size:17.5px;line-height:1.75}
+.actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:999px;border:1px solid var(--panel-border);background:#151522;font-weight:700;font-size:14px;transition:all .25s ease;cursor:pointer}
+.btn:hover{transform:translateY(-2px);border-color:#534d70;box-shadow:0 10px 25px rgba(0,0,0,.35)}
+.btn.primary{background:linear-gradient(90deg,#8d00e8,#c72eff);border:0;color:#fff;box-shadow:0 12px 35px rgba(161,0,255,.3)}
+.btn.primary:hover{box-shadow:0 16px 45px rgba(161,0,255,.45);filter:brightness(1.08)}
+.btn.gold{background:linear-gradient(90deg,#ffbd4a,#ff9300);border:0;color:#0b0813;box-shadow:0 12px 30px rgba(255,189,74,.25)}
+
+/* HERO CARD & INTERACTIVE BULB */
+.hero-card{min-height:500px;display:grid;place-items:center;position:relative}
+.orb{position:absolute;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,#321852 0,transparent 70%);filter:blur(30px)}
+.portrait{width:min(540px,88vw);aspect-ratio:1341/1173;position:relative;overflow:visible;filter:drop-shadow(0 25px 55px rgba(141,0,255,.2));transition:transform .25s ease-out}
+.portrait>img{width:100%;height:100%;object-fit:contain;display:block;position:relative;z-index:2}
+.bulb-glow{position:absolute;left:79%;top:18%;width:115px;height:115px;border-radius:50%;background:radial-gradient(circle,rgba(255,200,60,.7) 0,rgba(255,173,0,.3) 35%,rgba(190,80,255,.15) 58%,transparent 72%);filter:blur(8px);opacity:.55;transform:translate(-50%,-50%) scale(.9);transition:opacity .25s ease,transform .25s ease;pointer-events:none;z-index:1;mix-blend-mode:screen}
+.portrait.is-reacting{transform:translate3d(var(--px,0px),var(--py,0px),0) rotate(var(--rot,0deg));transition:transform .08s linear}
+.scrollhint{position:absolute;bottom:0px;color:#858296;font-size:11px;letter-spacing:.18em;text-transform:uppercase}
+.scrollhint strong{color:#c48eff;font-weight:700}
+
+/* SECTION BASICS */
+section{padding:105px 0;position:relative}
+.sectionhead{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:44px}
+.sectionhead h2{font-size:clamp(36px,5.5vw,66px);line-height:1.02;margin:8px 0 0;letter-spacing:-.045em}
+.sectionhead p{max-width:440px;color:var(--muted);line-height:1.75;font-size:15.5px}
+
+/* SERVICES SECTION — CIRCULAR ORBIT ECOSYSTEM & MINIMAL BOTTOM RECTANGLES */
+:root {
+  --r-inner: 135px;
+  --r-outer: 220px;
+}
+
+.services-orbit-stage {
+  width: 100%;
+  max-width: 600px;
+  height: 520px;
+  margin: 0 auto 30px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Orbit Track Rings */
+.orbit-track {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.orbit-track.inner {
+  width: calc(var(--r-inner) * 2);
+  height: calc(var(--r-inner) * 2);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 0 25px rgba(161, 0, 255, 0.1);
+}
+.orbit-track.outer {
+  width: calc(var(--r-outer) * 2);
+  height: calc(var(--r-outer) * 2);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 35px rgba(0, 229, 195, 0.05);
+}
+
+/* Decorative Arcs on Outer Ring */
+.orbit-arc {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: calc(var(--r-outer) * 2 + 16px);
+  height: calc(var(--r-outer) * 2 + 16px);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 1.5px solid transparent;
+  border-top-color: rgba(161, 0, 255, 0.4);
+  border-bottom-color: rgba(255, 189, 74, 0.35);
+  pointer-events: none;
+  animation: slowOrbitSpin 40s linear infinite;
+}
+@keyframes slowOrbitSpin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Center LUNAKRAFT Hub */
+/* Center LUNAKRAFT Hub: ONLY Logo, No Text */
+.orbit-center-hub {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  pointer-events: none;
+}
+.orbit-glow-disc {
+  position: absolute;
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(161, 0, 255, 0.45) 0%, rgba(255, 189, 74, 0.18) 45%, transparent 70%);
+  filter: blur(22px);
+  z-index: -1;
+  animation: pulseCenterGlow 4s ease-in-out infinite alternate;
+}
+@keyframes pulseCenterGlow {
+  0% { transform: scale(0.9); opacity: 0.6; }
+  100% { transform: scale(1.2); opacity: 0.95; }
+}
+.orbit-logo-img {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 25px rgba(161, 0, 255, 0.9)) drop-shadow(0 0 10px rgba(255, 189, 74, 0.6));
+  animation: logoFloat 4s ease-in-out infinite alternate;
+}
+@keyframes logoFloat {
+  0% { transform: scale(0.97); }
+  100% { transform: scale(1.05); }
+}
+
+/* Orbit Wheels (Perfect Circular Rotation) */
+.orbit-wheel {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 6;
+  will-change: transform;
+}
+.orbit-wheel.inner-wheel {
+  width: calc(var(--r-inner) * 2);
+  height: calc(var(--r-inner) * 2);
+  animation: spinWheelCW 32s linear infinite;
+}
+.orbit-wheel.outer-wheel {
+  width: calc(var(--r-outer) * 2);
+  height: calc(var(--r-outer) * 2);
+  animation: spinWheelCW 48s linear infinite;
+}
+
+/* Smooth, continuous orbit — pauses only when hovering an icon */
+.services-orbit-stage.is-paused .orbit-wheel,
+.services-orbit-stage.is-paused .orbit-rotator,
+.services-orbit-stage:has(.orbit-squircle:hover) .orbit-wheel,
+.services-orbit-stage:has(.orbit-squircle:hover) .orbit-rotator {
+  animation-play-state: paused;
+}
+
+@keyframes spinWheelCW {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Counter-rotator to keep icons 100% upright */
+.orbit-rotator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-origin: 50% 50%;
+  pointer-events: auto;
+  will-change: transform;
+}
+.inner-wheel .orbit-rotator {
+  animation: counterSpinCW 32s linear infinite;
+}
+.outer-wheel .orbit-rotator {
+  animation: counterSpinCW 48s linear infinite;
+}
+
+@keyframes counterSpinCW {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(-360deg); }
+}
+
+/* Orbit Node placed on the wheel perimeter */
+.orbit-node {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+/* The Interactive Squircle App Icon */
+.orbit-squircle {
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: transform .25s cubic-bezier(.2,.8,.2,1), box-shadow .25s ease;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.14);
+  position: relative;
+}
+.orbit-squircle svg {
+  width: 24px;
+  height: 24px;
+  fill: #fff;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+  pointer-events: none;
+}
+.orbit-squircle:hover,
+.orbit-node.is-highlighted .orbit-squircle {
+  transform: scale(1.24);
+  box-shadow: 0 14px 32px rgba(161,0,255,0.7), 0 0 0 2px #fff;
+  z-index: 30;
+}
+
+/* Floating Label Tooltip on Hover */
+.orbit-squircle::after {
+  content: attr(data-label);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: rgba(9, 9, 16, 0.94);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 99px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .2s, transform .2s;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+  z-index: 40;
+}
+.orbit-squircle:hover::after,
+.orbit-node.is-highlighted .orbit-squircle::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* SERVICES CARDS: SMALL & MINIMAL RECTANGLES AT BOTTOM */
+.services-rect-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-top: 35px;
+}
+.service-mini-card {
+  background: rgba(18, 17, 30, 0.65);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--panel-border);
+  border-radius: 14px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: all .25s ease;
+  position: relative;
+  overflow: hidden;
+}
+.service-mini-card:hover,
+.service-mini-card.is-highlighted {
+  background: rgba(28, 24, 46, 0.9);
+  border-color: rgba(161, 0, 255, 0.7);
+  box-shadow: 0 10px 24px rgba(161, 0, 255, 0.22);
+  transform: translateY(-3px);
+}
+.mini-card-icon {
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+  border-radius: 11px;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+.mini-card-icon svg {
+  width: 19px;
+  height: 19px;
+  fill: #fff;
+}
+.mini-card-content {
+  overflow: hidden;
+  flex-grow: 1;
+}
+.mini-card-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 2px;
+}
+.mini-card-desc {
+  font-size: 11px;
+  color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 5px;
+}
+.mini-card-tags {
+  display: flex;
+  gap: 5px;
+}
+.mini-tag {
+  font-size: 9.5px;
+  padding: 2px 7px;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #c4c1d2;
+}
+
+@media(max-width:960px){
+  :root {
+    --r-inner: 110px;
+    --r-outer: 180px;
+  }
+  .services-orbit-stage {
+    height: 430px;
+  }
+  .services-rect-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media(max-width:580px){
+  :root {
+    --r-inner: 82px;
+    --r-outer: 138px;
+  }
+  .services-orbit-stage {
+    height: 340px;
+  }
+  .orbit-squircle {
+    width: 40px;
+    height: 40px;
+    border-radius: 11px;
+  }
+  .orbit-squircle svg {
+    width: 18px;
+    height: 18px;
+  }
+  .orbit-logo-img {
+    width: 65px;
+    height: 65px;
+  }
+  .services-rect-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* THINK / 2 FEATURED CASE STUDIES */
+.featured-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:24px;
+  max-width:1080px;
+  margin:0 auto;
+}
+.case-card{
+  background:linear-gradient(170deg,#151426,#0d0d17);
+  border:1px solid var(--panel-border);
+  border-radius:20px;
+  overflow:hidden;
+  transition:all .3s ease;
+  display:flex;
+  flex-direction:column;
+  box-shadow:0 12px 36px rgba(0,0,0,.35);
+}
+.case-card:hover{
+  transform:translateY(-6px);
+  border-color:rgba(199,125,255,.6);
+  box-shadow:0 20px 50px rgba(161,0,255,.2);
+}
+.case-thumb{
+  width:100%;
+  aspect-ratio:16/9;
+  max-height:240px;
+  background:#090912;
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.case-thumb img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .5s cubic-bezier(.2,.8,.2,1);
+}
+.case-card:hover .case-thumb img{
+  transform:scale(1.04);
+}
+.case-thumb-badge{
+  position:absolute;
+  top:12px;
+  left:12px;
+  padding:4px 11px;
+  border-radius:999px;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  background:rgba(9,9,15,.85);
+  backdrop-filter:blur(8px);
+  border:1px solid rgba(255,255,255,.14);
+  color:var(--gold);
+  z-index:2;
+}
+.case-body{padding:20px 22px;display:flex;flex-direction:column;flex-grow:1}
+.case-body h3{font-size:19px;margin:0 0 8px;line-height:1.25;letter-spacing:-.015em}
+.case-desc{color:var(--muted);font-size:13px;line-height:1.55;margin:0 0 14px}
+.case-meta-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+  padding:12px 14px;
+  background:rgba(0,0,0,.25);
+  border:1px solid rgba(255,255,255,.05);
+  border-radius:12px;
+  margin-bottom:14px;
+}
+.case-meta-item{display:flex;flex-direction:column;gap:2px}
+.case-meta-label{font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:#8f8b9e;font-weight:700}
+.case-meta-val{font-size:12px;color:#f0eef5;font-weight:600;display:flex;align-items:center;gap:5px}
+.case-foot{margin-top:auto;display:flex;align-items:center;justify-content:space-between;padding-top:12px;border-top:1px solid var(--panel-border)}
+.view-case-btn{
+  font-size:12.5px;
+  font-weight:700;
+  color:#d79eff;
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
+  cursor:pointer;
+  transition:all .2s;
+}
+.view-case-btn:hover{color:#fff;transform:translateX(4px)}
+
+/* UI/UX MOCKUP PREVIEW CARD */
+.ui-mockup-frame{
+  width:100%;
+  height:100%;
+  padding:24px;
+  background:radial-gradient(circle at 50% 20%,#0f2e3d,#09141f 70%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+}
+.ui-app-shell{
+  width:260px;
+  height:240px;
+  background:#101a24;
+  border:2px solid #1a3c4f;
+  border-radius:20px;
+  box-shadow:0 20px 45px rgba(0,0,0,.6);
+  padding:14px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  position:relative;
+  overflow:hidden;
+}
+.ui-app-header{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #1b3a4a;padding-bottom:8px}
+.ui-app-pill{width:45px;height:7px;border-radius:99px;background:#00e5c3}
+.ui-telehealth-doc{display:flex;align-items:center;gap:10px;background:rgba(0,229,195,.1);border:1px solid rgba(0,229,195,.2);padding:8px 10px;border-radius:12px}
+.ui-avatar{width:32px;height:32px;border-radius:50%;background:#00e5c3;display:grid;place-items:center;font-weight:800;font-size:11px;color:#052026}
+.ui-telehealth-stats{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.ui-stat-box{background:#162433;border-radius:8px;padding:8px;border:1px solid #1e3549;font-size:10px}
+.ui-stat-box strong{display:block;font-size:13px;color:#00e5c3}
+
+/* WORKS & ARCHIVE SECTION */
+.foldergrid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:0}
+.folder{
+  min-height:280px;
+  border:1px solid #27344e;
+  border-radius:24px;
+  background:linear-gradient(145deg,#0e2c56,#0a1225);
+  padding:20px;
+  position:relative;
+  overflow:hidden;
+  cursor:pointer;
+  transition:transform .08s cubic-bezier(0,0,0.2,1), border-color .08s ease, box-shadow .08s ease;
+  will-change:transform;
+}
+.folder:hover{
+  transform:translateY(-8px);
+  border-color:#a100ff;
+  box-shadow:0 22px 60px rgba(110,0,230,.28);
+}
+.foldertab{width:90px;height:24px;border-radius:10px 10px 0 0;background:#184279;pointer-events:none}
+.mini-stack{position:absolute;top:24px;left:50%;width:160px;height:120px;transform:translateX(-50%);pointer-events:none}
+.mini-stack img,
+.mini-stack video,
+.mini-stack .mini-vid-thumb{
+  position:absolute;
+  width:90px;
+  height:115px;
+  object-fit:cover;
+  border:2.5px solid #fff;
+  border-radius:6px;
+  box-shadow:0 10px 24px #000a;
+  transition:transform .08s cubic-bezier(0,0,0.2,1), box-shadow .08s ease;
+  will-change:transform;
+  pointer-events:none;
+}
+.mini-stack > :nth-child(1){left:5px;top:12px;transform:rotate(-11deg)}
+.mini-stack > :nth-child(2){left:35px;top:2px;transform:rotate(-1deg)}
+.mini-stack > :nth-child(3){left:65px;top:12px;transform:rotate(9deg)}
+
+.folder:hover .mini-stack > :nth-child(1){transform:translate(-24px,-14px) rotate(-18deg)}
+.folder:hover .mini-stack > :nth-child(2){transform:translateY(-24px)}
+.folder:hover .mini-stack > :nth-child(3){transform:translate(24px,-12px) rotate(18deg)}
+
+/* VIDEO ARCHIVE MODAL FILTER BAR */
+.video-filter-bar{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-bottom:20px;
+  padding-bottom:14px;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.v-tab{
+  padding:7px 16px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.04);
+  color:#b6b2c7;
+  font-size:12.5px;
+  font-weight:600;
+  cursor:pointer;
+  transition:all .15s ease;
+}
+.v-tab:hover{
+  color:#fff;
+  border-color:rgba(199,125,255,.4);
+  background:rgba(199,125,255,.08);
+}
+.v-tab.active{
+  background:linear-gradient(135deg,#8d00e8,#c77dff);
+  color:#fff;
+  border-color:#d89eff;
+  box-shadow:0 0 16px rgba(161,0,255,.35);
+}
+.mini-card-ui{
+  width:110px;
+  height:90px;
+  background:#132235;
+  border:2px solid #00e5c3;
+  border-radius:10px;
+  box-shadow:0 10px 25px rgba(0,0,0,.6);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:6px;
+  transition:transform .08s cubic-bezier(0,0,0.2,1), border-color .08s ease;
+  will-change:transform;
+  pointer-events:none;
+}
+.folder:hover .mini-card-ui{transform:scale(1.1) translateY(-6px);border-color:#5bf5dd}
+
+.mini-stack-video{display:flex;align-items:center;justify-content:center;height:110px;pointer-events:none}
+.mini-card-video{
+  width:80px;
+  height:110px;
+  background:#27123d;
+  border:2px solid #c77dff;
+  border-radius:12px;
+  box-shadow:0 10px 25px rgba(0,0,0,.6);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:6px;
+  transition:transform .08s cubic-bezier(0,0,0.2,1), border-color .08s ease;
+  position:relative;
+  will-change:transform;
+  pointer-events:none;
+}
+.play-ring{width:32px;height:32px;border-radius:50%;background:rgba(161,0,255,.7);border:1.5px solid #fff;display:grid;place-items:center;font-size:13px}
+.folder:hover .mini-card-video{transform:scale(1.1) translateY(-6px);border-color:#ffbd4a}
+
+.folderbody{
+  position:absolute;
+  left:16px;
+  right:16px;
+  bottom:16px;
+  height:135px;
+  border-radius:16px;
+  background:linear-gradient(145deg,#0a366e,#061738);
+  border:1px solid #4b8bca55;
+  padding:16px;
+  pointer-events:none;
+}
+.folder h3{margin:0 0 6px;font-size:22px;letter-spacing:-.02em}
+.folder small{color:#a4c7f3;max-width:80%;display:block;line-height:1.4;font-size:12px}
+.arrow{position:absolute;right:14px;bottom:14px;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;border:1px solid #ffffff44;font-size:18px;transition:.08s;pointer-events:none}
+.folder:hover .arrow{background:#a100ff;border-color:#d67aff;transform:rotate(-25deg)}
+
+/* CATEGORY FILTER TABS */
+.filter-tabs{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-bottom:32px;
+  border-bottom:1px solid var(--panel-border);
+  padding-bottom:16px;
+}
+.tab-btn{
+  padding:9px 18px;
+  border-radius:999px;
+  border:1px solid var(--panel-border);
+  background:var(--bg-soft);
+  color:#b1aebb;
+  font-size:13.5px;
+  font-weight:600;
+  cursor:pointer;
+  transition:all .25s ease;
+}
+.tab-btn:hover{color:#fff;border-color:#534d70}
+.tab-btn.active{
+  background:linear-gradient(90deg,#8d00e8,#b824ff);
+  color:#fff;
+  border-color:transparent;
+  box-shadow:0 8px 24px rgba(161,0,255,.3);
+}
+
+/* WORK GRID ITEMS */
+.workgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.work-item{
+  background:#10101b;
+  border:1px solid var(--panel-border);
+  border-radius:20px;
+  overflow:hidden;
+  cursor:pointer;
+  transition:all .3s ease;
+  position:relative;
+  display:flex;
+  flex-direction:column;
+}
+.work-item:hover{
+  transform:translateY(-6px);
+  border-color:rgba(161,0,255,.5);
+  box-shadow:0 18px 45px rgba(0,0,0,.5);
+}
+.work-media{
+  width:100%;
+  aspect-ratio:4/5;
+  background:#090911;
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.work-media img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .5s ease;
+}
+.work-item:hover .work-media img{transform:scale(1.05)}
+.work-tag-pill{
+  position:absolute;
+  top:12px;
+  left:12px;
+  padding:4px 10px;
+  border-radius:999px;
+  font-size:11px;
+  font-weight:700;
+  background:rgba(9,9,15,.75);
+  backdrop-filter:blur(6px);
+  border:1px solid rgba(255,255,255,.1);
+  color:var(--gold);
+}
+.work-meta{padding:18px;display:flex;flex-direction:column;gap:4px;flex-grow:1}
+.work-meta strong{font-size:16px;color:#fff}
+.work-meta span{color:#888497;font-size:12.5px}
+
+/* Video & UX Special Cards in Works */
+.work-video-overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.35);
+  display:grid;
+  place-items:center;
+  transition:background .25s;
+}
+.work-item:hover .work-video-overlay{background:rgba(161,0,255,.25)}
+.play-btn-circle{
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#8d00e8,#ffbd4a);
+  display:grid;
+  place-items:center;
+  color:#fff;
+  font-size:18px;
+  box-shadow:0 10px 25px rgba(0,0,0,.6);
+  transition:transform .3s;
+}
+.work-item:hover .play-btn-circle{transform:scale(1.12)}
+
+/* ABOUT & LIVING VIDEO PORTRAIT */
+.about{display:grid;grid-template-columns:.85fr 1.15fr;gap:55px;align-items:center}
+.about-photo{
+  border:none;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:none;
+  position:relative;
+  background:transparent;
+  max-width:390px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.about-photo video,
+.about-video{
+  width:100%;
+  height:auto;
+  aspect-ratio:4/5;
+  object-fit:cover;
+  display:block;
+  border-radius:20px;
+  border:none;
+  outline:none;
+  box-shadow:none;
+  background:transparent;
+}
+
+/* PROMINENT SATISH KUMAR HIGHLIGHT STYLES */
+.creator-name-box{
+  margin:10px 0 16px;
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+}
+.creator-label{
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.12em;
+  color:#00e5c3;
+  text-transform:uppercase;
+}
+.creator-name-title{
+  font-size:clamp(36px, 4.8vw, 52px);
+  font-weight:900;
+  letter-spacing:-.025em;
+  line-height:1.05;
+  margin:0;
+  background:linear-gradient(135deg, #ffffff 10%, #ffbd4a 50%, #c77dff 90%);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  display:inline-block;
+  filter:drop-shadow(0 2px 14px rgba(255,189,74,0.3));
+}
+.creator-tagline{
+  font-size:24px;
+  line-height:1.25;
+  margin:0 0 18px;
+  letter-spacing:-.02em;
+  color:#e4e0ef;
+}
+.highlight-name{
+  color:#ffbd4a;
+  font-weight:700;
+  text-shadow:0 0 10px rgba(255,189,74,.35);
+}
+
+.about-copy p{color:var(--muted);line-height:1.8;font-size:15.5px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.chip{border:1px solid var(--panel-border);border-radius:999px;padding:8px 14px;color:#d2cedb;font-size:12.5px;background:rgba(255,255,255,.03)}
+
+/* MINIMAL HORIZONTAL CAREER PATHWAY: EDUCATION • INTERNSHIP • EXPERIENCE */
+.pathway-section{
+  margin-top:60px;
+  position:relative;
+}
+.pathway-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  margin-bottom:24px;
+  gap:16px;
+  flex-wrap:wrap;
+}
+.pathway-header h3{
+  font-size:clamp(22px,3.2vw,34px);
+  letter-spacing:-.03em;
+  margin:4px 0 0;
+  line-height:1.2;
+}
+.pathway-controls{
+  display:flex;
+  gap:8px;
+}
+.pathway-nav-btn{
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  border:1px solid var(--panel-border);
+  background:var(--bg-soft);
+  color:#fff;
+  display:grid;
+  place-items:center;
+  cursor:pointer;
+  transition:all .2s ease;
+  font-size:14px;
+}
+.pathway-nav-btn:hover{
+  background:var(--purple);
+  border-color:#d89eff;
+}
+.pathway-track-wrapper{
+  position:relative;
+  width:100%;
+}
+.pathway-beam-line{
+  position:absolute;
+  top:22px;
+  left:30px;
+  right:30px;
+  height:3px;
+  background:linear-gradient(90deg,#a100ff 0%,#7b2cbf 22%,#00e5c3 48%,#ffbd4a 74%,#ff007f 100%);
+  border-radius:99px;
+  z-index:1;
+  box-shadow:0 0 12px rgba(161,0,255,.4);
+}
+.pathway-scroll-container{
+  display:flex;
+  gap:18px;
+  overflow-x:auto;
+  scroll-behavior:smooth;
+  scroll-snap-type:x mandatory;
+  padding:6px 4px 18px;
+  position:relative;
+  z-index:2;
+  scrollbar-width:thin;
+  scrollbar-color:#552d79 rgba(20,20,32,0.6);
+}
+.pathway-scroll-container::-webkit-scrollbar{
+  height:6px;
+}
+.pathway-scroll-container::-webkit-scrollbar-track{
+  background:rgba(20,20,32,0.6);
+  border-radius:99px;
+}
+.pathway-scroll-container::-webkit-scrollbar-thumb{
+  background:linear-gradient(90deg,#8d00e8,#c77dff);
+  border-radius:99px;
+}
+
+/* SLEEK MINIMAL PATHWAY STEP NODE - UNIFORM SINGLE SIZE */
+.path-step-node{
+  flex:0 0 240px;
+  width:240px;
+  scroll-snap-align:start;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:12px;
+  position:relative;
+}
+.path-step-marker{
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  background:#0b0a14;
+  border:2.5px solid var(--node-color,#a100ff);
+  display:grid;
+  place-items:center;
+  font-size:12px;
+  font-weight:800;
+  color:#fff;
+  box-shadow:0 0 14px var(--node-color,#a100ff);
+  z-index:3;
+  margin-left:14px;
+  transition:transform .15s ease, background .15s ease;
+}
+.path-step-node:hover .path-step-marker{
+  transform:scale(1.15);
+  background:var(--node-color,#a100ff);
+  color:#06040b;
+}
+.path-minimal-card{
+  width:100%;
+  height:136px;
+  box-sizing:border-box;
+  background:rgba(18,17,30,0.88);
+  backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:16px;
+  padding:14px 16px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  box-shadow:0 8px 24px rgba(0,0,0,0.35);
+  transition:border-color .15s ease, transform .15s ease;
+}
+.path-step-node:hover .path-minimal-card{
+  border-color:var(--node-color,#a100ff);
+  transform:translateY(-3px);
+}
+.path-card-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:6px;
+  margin-bottom:2px;
+}
+.path-badge{
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.05em;
+  text-transform:uppercase;
+  padding:3px 8px;
+  border-radius:99px;
+  border:1px solid rgba(255,255,255,.1);
+}
+.path-badge.edu{background:rgba(161,0,255,.18);color:#d79eff;border-color:rgba(161,0,255,.35)}
+.path-badge.intern{background:rgba(0,229,195,.15);color:#00e5c3;border-color:rgba(0,229,195,.35)}
+.path-badge.exp{background:rgba(255,189,74,.16);color:#ffbd4a;border-color:rgba(255,189,74,.35)}
+.path-year{
+  font-size:11px;
+  font-weight:700;
+  color:#9a96aa;
+}
+.path-card-role{
+  font-size:13.5px;
+  font-weight:700;
+  color:#fff;
+  line-height:1.25;
+  margin:0;
+  min-height:34px;
+  display:flex;
+  align-items:center;
+}
+.path-card-org{
+  font-size:11.5px;
+  color:#ffbd4a;
+  font-weight:500;
+  line-height:1.3;
+  margin:0;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.pathway-minimal-cert{
+  margin-top:18px;
+  padding:10px 18px;
+  border-radius:12px;
+  background:rgba(18,17,30,0.6);
+  border:1px solid rgba(255,255,255,.07);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  flex-wrap:wrap;
+  font-size:12px;
+}
+
+.agency{border:1px solid #36224e;border-radius:32px;padding:60px;background:radial-gradient(circle at 78% 22%,rgba(161,0,255,.22),transparent 40%),#11101a}
+.agency h2{font-size:clamp(40px,6.5vw,78px);line-height:.96;letter-spacing:-.05em;max-width:780px;margin:12px 0 20px}
+.agency p{color:var(--muted);max-width:680px;font-size:16.5px;line-height:1.8}
+
+/* CONTACT & FOOTER */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:45px}
+.contact h2{font-size:clamp(42px,6.5vw,76px);line-height:.95;margin:10px 0 25px;letter-spacing:-.05em}
+.contact-card{border:1px solid var(--panel-border);border-radius:25px;padding:30px;background:#10101b}
+.contact-card div{padding:16px 0;border-bottom:1px solid var(--panel-border);line-height:1.6}
+.contact-card div:last-child{border:0}
+.contact-card strong{color:#ffbd4a;font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+.footer{padding:35px 0 50px;border-top:1px solid var(--panel-border);color:#838090;font-size:13.5px;display:flex;justify-content:space-between;align-items:center}
+
+/* RICH MODAL ARCHITECTURE */
+.modal{position:fixed;inset:0;background:rgba(5,5,10,.88);backdrop-filter:blur(16px);z-index:200;display:none;align-items:center;justify-content:center;padding:20px}
+.modal.open{display:flex}
+.modalbox{width:min(1240px,96vw);max-height:92vh;overflow-y:auto;background:#12121e;border:1px solid #373347;border-radius:28px;padding:28px;box-shadow:0 30px 80px rgba(0,0,0,.8);position:relative}
+.modalhead{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:24px;border-bottom:1px solid var(--panel-border);padding-bottom:18px}
+.modalhead h2{margin:6px 0 0;font-size:28px;letter-spacing:-.02em}
+.close-btn{width:42px;height:42px;border-radius:50%;border:1px solid var(--panel-border);background:#1a1926;color:#fff;font-size:24px;display:grid;place-items:center;cursor:pointer;transition:all .2s;line-height:1}
+.close-btn:hover{background:#a100ff;border-color:#d78aff;transform:rotate(90deg)}
+
+/* Case Study Modal Tabs */
+.modal-tabs{display:flex;gap:10px;margin-bottom:24px;border-bottom:1px solid var(--panel-border);padding-bottom:12px;overflow-x:auto}
+.modal-tab-btn{padding:8px 16px;border-radius:8px;background:transparent;border:1px solid transparent;color:var(--muted);font-weight:600;font-size:13.5px;cursor:pointer;white-space:nowrap}
+.modal-tab-btn.active{background:rgba(161,0,255,.18);border-color:rgba(161,0,255,.45);color:#fff}
+.modal-content-section{display:none}
+.modal-content-section.active{display:block}
+
+/* Rich Case Modal Layout */
+.case-modal-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:30px}
+.case-modal-preview{background:#0a0a12;border-radius:18px;border:1px solid var(--panel-border);overflow:hidden;display:flex;align-items:center;justify-content:center;min-height:360px}
+.case-modal-preview img{width:100%;height:auto;max-height:65vh;object-fit:contain;display:block}
+.case-detail-box{background:#171626;border-radius:16px;border:1px solid var(--panel-border);padding:20px;margin-bottom:16px}
+.case-detail-box h4{margin:0 0 8px;font-size:16px;color:var(--gold);display:flex;align-items:center;gap:8px}
+.case-detail-box p{margin:0;color:#c9c6d5;font-size:14px;line-height:1.65}
+.case-tool-chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.case-tool-chip{font-size:12px;padding:4px 10px;border-radius:6px;background:rgba(161,0,255,.15);border:1px solid rgba(161,0,255,.3);color:#e4c7ff}
+
+/* Gallery inside Modal */
+.modal-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.modal-gallery img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:12px;cursor:pointer;border:1px solid var(--panel-border);transition:transform .3s}
+.modal-gallery img:hover{transform:scale(1.03);border-color:var(--purple)}
+
+/* Video Modal Layout */
+.video-player-container{
+  width:100%;
+  aspect-ratio:16/9;
+  background:#050508;
+  border-radius:16px;
+  overflow:hidden;
+  border:1px solid var(--panel-border);
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+}
+.video-canvas-anim{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:radial-gradient(circle,#28133f 0,#08070e 80%);
+}
+.video-play-state{z-index:2;display:flex;flex-direction:column;align-items:center;gap:12px}
+.video-controls-bar{
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  background:linear-gradient(transparent,rgba(0,0,0,.9));
+  padding:15px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  z-index:5;
+}
+
+/* RESPONSIVE */
+@media(max-width:960px){
+  .services-grid{grid-template-columns:repeat(2,1fr)}
+  .foldergrid{grid-template-columns:repeat(2,1fr)}
+  .case-modal-grid{grid-template-columns:1fr}
+}
+@media(max-width:800px){
+  .navlinks{display:none}
+  .hero,.about,.contact{grid-template-columns:1fr}
+  .featured-grid{grid-template-columns:1fr}
+  .hero-card{min-height:380px}
+  .workgrid{grid-template-columns:repeat(2,1fr)}
+  .sectionhead{display:block}
+  .sectionhead p{margin-top:16px}
+  .agency{padding:36px 24px}
+  .services-banner{flex-direction:column;align-items:flex-start}
+}
+@media(max-width:560px){
+  .services-grid,.workgrid,.foldergrid,.modal-gallery{grid-template-columns:1fr}
+  .hero h1{font-size:54px}
+  .portrait{width:310px}
+  .about-photo{max-width:340px;margin:0 auto}
+  .pathway-card{flex:0 0 280px;padding:20px 16px}
+  .pathway-beam-line{display:none}
+  .footer{flex-direction:column;gap:12px;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<header class="nav" id="top">
+  <div class="wrap navin">
+    <a class="brand" href="#hero">
+      <img src="assets/lunakraft-logo-emblem.png" alt="LUNAKRAFT">
+      <span>LUNAKRAFT</span>
+    </a>
+    <nav class="navlinks">
+      <a href="#hero">Home</a>
+      <a href="#services">Services</a>
+      <a href="#featured">Think</a>
+      <a href="#work">Works</a>
+      <a href="#about">About</a>
+      <a href="#contact" class="nav-cta">Let's Create ↗</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- HERO SECTION -->
+  <section class="hero wrap" id="hero">
+    <div>
+      <div class="eyebrow">Creative Direction • Brand Identity • Digital Marketing</div>
+      <h1>We craft<br><span class="gradient">brands that shine.</span></h1>
+      <p>LUNAKRAFT is the creative studio driven by Satish Kumar. We craft high-converting posters, marketing collateral, social media management, dynamic video reels, brand systems, and digital web experiences built to make ideas impossible to ignore.</p>
+      <div class="actions">
+        <a class="btn primary" href="#featured">Explore Best Works ↗</a>
+        <a class="btn" href="#services">View Services ↓</a>
+      </div>
+    </div>
+    <div class="hero-card" id="heroTrack">
+      <div class="orb"></div>
+      <div class="portrait">
+        <div class="bulb-glow"></div>
+        <img src="assets/hero-portrait.png" alt="Satish Kumar">
+      </div>
+      <div class="scrollhint">Move cursor • <strong>the idea comes alive</strong></div>
+    </div>
+  </section>
+
+  <!-- 01 / SERVICES SECTION -->
+  <section id="services">
+    <div class="wrap">
+      <div class="sectionhead">
+        <div>
+          <div class="kicker">01 / Capabilities &amp; Solutions</div>
+          <h2>Creative ecosystem<br><span class="gradient">built to shine.</span></h2>
+        </div>
+        <p>Surrounding your brand with high-impact creative disciplines. Hover the orbit nodes or explore the minimal service rectangles below.</p>
+      </div>
+
+      <!-- CIRCULAR ORBIT OF SERVICES (LUNAKRAFT IN MIDDLE) -->
+      <div class="services-orbit-stage">
+        <!-- Concentric Circular Orbit Rings -->
+        <div class="orbit-track inner"></div>
+        <div class="orbit-track outer"></div>
+        <div class="orbit-arc"></div>
+
+        <!-- Center LUNAKRAFT Core Hub: Transparent PNG Logo Only, No Text -->
+        <div class="orbit-center-hub">
+          <div class="orbit-glow-disc"></div>
+          <img src="assets/lunakraft-logo-emblem.png" alt="LUNAKRAFT Emblem" class="orbit-logo-img">
+        </div>
+
+        <!-- INNER REVOLVING WHEEL (4 Core Disciplines - 32s rotation) -->
+        <div class="orbit-wheel inner-wheel">
+          <!-- 1. Social Media Management (Top, 0 deg) -->
+          <div class="orbit-node" data-service="social" style="top: 0%; left: 50%;">
+            <div class="orbit-rotator">
+              <div class="orbit-squircle" data-label="Social Media Management" style="background:linear-gradient(135deg,#f09433,#dc2743,#bc1888)">
+                <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Graphic Designing (Right, 90 deg) -->
+          <div class="orbit-node" data-service="graphic" style="top: 50%; left: 100%;">
+            <div class="orbit-rotator">
+              <div class="orbit-squircle" data-label="Graphic Designing" style="background:linear-gradient(135deg,#ff416c,#ff4b2b)">
+                <svg viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. Reels & Video Editing (Bottom, 180 deg) -->
+          <div class="orbit-node" data-service="video" style="top: 100%; left: 50%;">
+            <div class="orbit-rotator">
+              <div class="orbit-squircle" data-label="Reels &amp; Video Editing" style="background:linear-gradient(135deg,#8a2387,#e94057,#f27121)">
+                <svg viewBox="0 0 24 24"><path d="M18 4l2 4h-3l-2-4h-2l2 4h-3l-2-4H8l2 4H7L5 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4h-4zm-6.75 11.25v-4.5l4 2.25-4 2.25z"/></svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. Branded Identity (Left, 270 deg) -->
+          <div class="orbit-node" data-service="brand" style="top: 50%; left: 0%;">
+            <div class="orbit-rotator">
+              <div class="orbit-squircle" data-label="Branded Identity" style="background:linear-gradient(135deg,#ffbd4a,#d48800)">
+                <svg viewBox="0 0 24 24"><path d="M19 3H5L2 9l10 12L22 9l-3-6zM9.62 8l1.5-3h1.76l1.5 3H9.62zM11 10.42L7.38 10l3.62 7.24V10.42zm2 7.24l3.62-7.24L13 10.42v7.24z"/></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- OUTER REVOLVING WHEEL (4 Growth Disciplines - 48s rotation) -->
+        <div class="orbit-wheel outer-wheel">
+          <!-- 5. Content Creation (Top-Right, 45 deg) -->
+          <div class="orbit-node" data-service="content" style="top: 14.64%; left: 85.36%;">
+            <div class="orbit-rotator">
+              <div class="orbit-squircle" data-label="Content Creation" style="background:linear-gradient(135deg,#11998e,#38ef7d)">
+                <svg viewBox="0 0 24 24"><path d="M12 2L9.5 8.5 3 11l6.5 2.5L12 20l2.5-6.5L21 11l-6.5-2.5L12 2zm7 12l-1.25 3.25L14.5 18.5l3.25 1.25L19 23l1.25-3.25L23.5 18.5l-3.25-1.25L19 14z"/></svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- 6. Digital Advertisements (Bottom-Right, 135 deg) -->
+          <div class="orbit-node" data-service="ads" style="top: 85.36%; left: 85.36%;">
+            <div class="orbit-rotator">
+              <div class="orbit-squircle" data-label="Digital Advertisements" style="background:linear-gradient(135deg,#ff0844,#ffb199)">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm0-14c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- 7. Digital Marketing Works (Bottom-Left, 225 deg) -->
+          <div class="orbit-node" data-service="marketing" style="top: 85.36%; left: 14.64%;">
+            <div class="orbit-rotator">
+              <div class="orbit-squircle" data-label="Digital Marketing &amp; Strategy" style="background:linear-gradient(135deg,#8e2de2,#4a00e0)">
+                <svg viewBox="0 0 24 24"><path d="M13.13 2.53c-.35-.35-.91-.35-1.26 0l-.87.87 5.66 5.66.87-.87c.35-.35.35-.91 0-1.26l-4.4-4.4zM4.64 19.36c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l3.18-3.18-1.41-1.41-3.18 3.18zm8.49-11.31L7.47 13.7l2.83 2.83 5.66-5.66-2.83-2.82zm-4.95 9.9l1.41 1.41c.39.39 1.02.39 1.41 0l3.18-3.18-1.41-1.41-3.19 3.18z"/></svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- 8. UX Websites & Systems (Top-Left, 315 deg) -->
+          <div class="orbit-node" data-service="ux" style="top: 14.64%; left: 14.64%;">
+            <div class="orbit-rotator">
+              <div class="orbit-squircle" data-label="UI/UX &amp; Web Systems" style="background:linear-gradient(135deg,#00c6ff,#0072ff)">
+                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-5 14H4v-4h11v4zm0-5H4V9h11v4zm5 5h-4V9h4v9z"/></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SMALL MINIMAL CONTENT RECTANGLES AT BOTTOM -->
+      <div class="services-rect-grid">
+        <!-- 1. Social Media Management -->
+        <div class="service-mini-card" data-service="social">
+          <div class="mini-card-icon" style="background:linear-gradient(135deg,#f09433,#dc2743,#bc1888)">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </div>
+          <div class="mini-card-content">
+            <div class="mini-card-title">Social Media Management</div>
+            <div class="mini-card-desc">Curated feeds, weekly calendars &amp; audience growth.</div>
+            <div class="mini-card-tags">
+              <span class="mini-tag">Calendars</span>
+              <span class="mini-tag">Engagement</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Graphic Designing -->
+        <div class="service-mini-card" data-service="graphic">
+          <div class="mini-card-icon" style="background:linear-gradient(135deg,#ff416c,#ff4b2b)">
+            <svg viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+          </div>
+          <div class="mini-card-content">
+            <div class="mini-card-title">Graphic Designing</div>
+            <div class="mini-card-desc">Event posters, vector graphics &amp; commercial print.</div>
+            <div class="mini-card-tags">
+              <span class="mini-tag">Posters</span>
+              <span class="mini-tag">CMYK Print</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Reels & Video Editing -->
+        <div class="service-mini-card" data-service="video">
+          <div class="mini-card-icon" style="background:linear-gradient(135deg,#8a2387,#e94057,#f27121)">
+            <svg viewBox="0 0 24 24"><path d="M18 4l2 4h-3l-2-4h-2l2 4h-3l-2-4H8l2 4H7L5 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4h-4zm-6.75 11.25v-4.5l4 2.25-4 2.25z"/></svg>
+          </div>
+          <div class="mini-card-content">
+            <div class="mini-card-title">Reels &amp; Video Editing</div>
+            <div class="mini-card-desc">High-retention 9:16 edits, beat sync &amp; kinetic text.</div>
+            <div class="mini-card-tags">
+              <span class="mini-tag">Reels (9:16)</span>
+              <span class="mini-tag">Subtitles</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Branded Identity -->
+        <div class="service-mini-card" data-service="brand">
+          <div class="mini-card-icon" style="background:linear-gradient(135deg,#ffbd4a,#d48800)">
+            <svg viewBox="0 0 24 24"><path d="M19 3H5L2 9l10 12L22 9l-3-6zM9.62 8l1.5-3h1.76l1.5 3H9.62zM11 10.42L7.38 10l3.62 7.24V10.42zm2 7.24l3.62-7.24L13 10.42v7.24z"/></svg>
+          </div>
+          <div class="mini-card-content">
+            <div class="mini-card-title">Branded Identity</div>
+            <div class="mini-card-desc">Logo architecture, color systems &amp; brand guides.</div>
+            <div class="mini-card-tags">
+              <span class="mini-tag">Logo Systems</span>
+              <span class="mini-tag">Brand Books</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Content Creation -->
+        <div class="service-mini-card" data-service="content">
+          <div class="mini-card-icon" style="background:linear-gradient(135deg,#11998e,#38ef7d)">
+            <svg viewBox="0 0 24 24"><path d="M12 2L9.5 8.5 3 11l6.5 2.5L12 20l2.5-6.5L21 11l-6.5-2.5L12 2zm7 12l-1.25 3.25L14.5 18.5l3.25 1.25L19 23l1.25-3.25L23.5 18.5l-3.25-1.25L19 14z"/></svg>
+          </div>
+          <div class="mini-card-content">
+            <div class="mini-card-title">Content Creation</div>
+            <div class="mini-card-desc">Educational carousels, visual storytelling &amp; copy.</div>
+            <div class="mini-card-tags">
+              <span class="mini-tag">Carousels</span>
+              <span class="mini-tag">Authority</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Digital Advertisements -->
+        <div class="service-mini-card" data-service="ads">
+          <div class="mini-card-icon" style="background:linear-gradient(135deg,#ff0844,#ffb199)">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm0-14c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
+          </div>
+          <div class="mini-card-content">
+            <div class="mini-card-title">Digital Advertisements</div>
+            <div class="mini-card-desc">High-CTR ad creative suites for Meta &amp; Google Display.</div>
+            <div class="mini-card-tags">
+              <span class="mini-tag">Meta Ads</span>
+              <span class="mini-tag">High CTR</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. Digital Marketing Works -->
+        <div class="service-mini-card" data-service="marketing">
+          <div class="mini-card-icon" style="background:linear-gradient(135deg,#8e2de2,#4a00e0)">
+            <svg viewBox="0 0 24 24"><path d="M13.13 2.53c-.35-.35-.91-.35-1.26 0l-.87.87 5.66 5.66.87-.87c.35-.35.35-.91 0-1.26l-4.4-4.4zM4.64 19.36c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l3.18-3.18-1.41-1.41-3.18 3.18zm8.49-11.31L7.47 13.7l2.83 2.83 5.66-5.66-2.83-2.82zm-4.95 9.9l1.41 1.41c.39.39 1.02.39 1.41 0l3.18-3.18-1.41-1.41-3.19 3.18z"/></svg>
+          </div>
+          <div class="mini-card-content">
+            <div class="mini-card-title">Digital Marketing Works</div>
+            <div class="mini-card-desc">Full-funnel campaign strategy &amp; client lead generation.</div>
+            <div class="mini-card-tags">
+              <span class="mini-tag">Lead Funnels</span>
+              <span class="mini-tag">Growth</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. UX Websites & Systems -->
+        <div class="service-mini-card" data-service="ux">
+          <div class="mini-card-icon" style="background:linear-gradient(135deg,#00c6ff,#0072ff)">
+            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-5 14H4v-4h11v4zm0-5H4V9h11v4zm5 5h-4V9h4v9z"/></svg>
+          </div>
+          <div class="mini-card-content">
+            <div class="mini-card-title">UI/UX &amp; Web Systems</div>
+            <div class="mini-card-desc">High-converting landing pages, app UI &amp; web portals.</div>
+            <div class="mini-card-tags">
+              <span class="mini-tag">Figma</span>
+              <span class="mini-tag">Live Sites</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 / THINK: 2 FEATURED CASE STUDY POSTS -->
+  <section id="featured">
+    <div class="wrap">
+      <div class="sectionhead">
+        <div>
+          <div class="kicker">02 / Think • Case Studies Behind the Craft</div>
+          <h2>Think.<br><span class="gradient">Behind the Craft.</span></h2>
+        </div>
+        <p>Two flagship creative deep dives — exploring academic celebration design and the complete end-to-end mobile telehealth product architecture.</p>
+      </div>
+
+      <div class="featured-grid">
+        <!-- POST 1: NCET GRADUATION DAY POSTER -->
+        <article class="case-card" onclick="openCaseModal('graduation')">
+          <div class="case-thumb">
+            <span class="case-thumb-badge">Featured Poster Breakdown</span>
+            <img src="assets/posters/NCET UG & PG Graduation day poster.png" alt="NCET Graduation Day Poster">
+          </div>
+          <div class="case-body">
+            <h3>NCET UG & PG Graduation Ceremony Poster</h3>
+            <p class="case-desc">An academic milestone poster designed to project celebration, regal prestige, and administrative dignity for Nagarjuna College of Engineering & Technology.</p>
+            <div class="case-meta-grid">
+              <div class="case-meta-item">
+                <span class="case-meta-label">Theme & Aesthetic</span>
+                <span class="case-meta-val">🎓 Regal Academic Gold & Prestige</span>
+              </div>
+              <div class="case-meta-item">
+                <span class="case-meta-label">Tools Used</span>
+                <span class="case-meta-val">🛠️ Photoshop • Illustrator • Figma</span>
+              </div>
+              <div class="case-meta-item">
+                <span class="case-meta-label">Category</span>
+                <span class="case-meta-val">📌 Academic Event Communication</span>
+              </div>
+              <div class="case-meta-item">
+                <span class="case-meta-label">Core Strategy</span>
+                <span class="case-meta-val">💡 Milestone Emotion + Logistics</span>
+              </div>
+            </div>
+            <div class="case-foot">
+              <span class="view-case-btn">Read Case Study & Process Breakdown →</span>
+              <span style="font-size:12px;color:var(--gold);font-weight:700">Flagship 01</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- POST 2: DOCTOR ANYWHERE TELEMEDICINE UI/UX CASE STUDY -->
+        <article class="case-card" onclick="openCaseModal('telehealth')">
+          <div class="case-thumb">
+            <span class="case-thumb-badge">UI/UX Mobile Product Study • Behance</span>
+            <img src="assets/doctor-anywhere/doctor cover page.png" alt="Doctor Anywhere Mobile App UI Case Study">
+          </div>
+          <div class="case-body">
+            <h3>Doctor Anywhere — Mobile App UI Case Study</h3>
+            <p class="case-desc">Comprehensive telemedicine & digital pharmacy app designed by Satish Kumar. Featuring frictionless doctor consultations, doorstep medicine delivery, and verified provider trust.</p>
+            <div class="case-meta-grid">
+              <div class="case-meta-item">
+                <span class="case-meta-label">Theme & Aesthetic</span>
+                <span class="case-meta-val">🩺 Empathetic & Frictionless Care</span>
+              </div>
+              <div class="case-meta-item">
+                <span class="case-meta-label">Tools Used</span>
+                <span class="case-meta-val">🛠️ Figma • Information Architecture • Wireframes</span>
+              </div>
+              <div class="case-meta-item">
+                <span class="case-meta-label">Category</span>
+                <span class="case-meta-val">📱 Mobile Health UI (Behance Showcase)</span>
+              </div>
+              <div class="case-meta-item">
+                <span class="case-meta-label">Key Flow</span>
+                <span class="case-meta-val">⚡ &lt;60s 1-Tap Consultation & Delivery</span>
+              </div>
+            </div>
+            <div class="case-foot">
+              <span class="view-case-btn">Read Case Study & Process Breakdown →</span>
+              <span style="font-size:12px;color:var(--teal);font-weight:700">Flagship 02</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 / WORKS: 4 RESTRUCTURED CATEGORIES (POSTERS, MARKETING CREATIVES, UX WEBSITES, VIDEOS & MOTION GRAPHICS) -->
+  <section id="work">
+    <div class="wrap">
+      <div class="sectionhead">
+        <div>
+          <div class="kicker">03 / Portfolio Archive</div>
+          <h2>Work, organized<br><span class="gradient">like ideas.</span></h2>
+        </div>
+        <p>Divided across our 4 primary creative disciplines: Posters, Marketing Creatives, UX Websites, and Videos &amp; Motion Graphics.</p>
+      </div>
+
+      <!-- 4 3D INTERACTIVE FOLDERS -->
+      <div class="foldergrid">
+        <!-- FOLDER 1: POSTERS -->
+        <div class="folder" data-kind="posters">
+          <div class="foldertab"></div>
+          <div class="mini-stack">
+            <img src="assets/posters/torii advanced excel post.png" alt="">
+            <img src="assets/posters/NCET UG & PG Graduation day poster.png" alt="">
+            <img src="assets/posters/NCMS brain teaser poster.jpg" alt="">
+          </div>
+          <div class="folderbody">
+            <h3>Posters</h3>
+            <small>Digital user designs • events • campus campaigns • workshops</small>
+            <span class="arrow">→</span>
+          </div>
+        </div>
+
+        <!-- FOLDER 2: MARKETING CREATIVES -->
+        <div class="folder" data-kind="marketing">
+          <div class="foldertab"></div>
+          <div class="mini-stack">
+            <img src="assets/banners/ratnakar banner 10-20 1.jpg" alt="Outdoor Banner">
+            <img src="assets/brochures/quality care broucher out side.jpg" alt="Clinical Brochure">
+            <img src="assets/visiting cards/JPEG/Bhavi visiting card front.jpg" alt="Corporate Visiting Card">
+          </div>
+          <div class="folderbody">
+            <h3>Marketing Creatives</h3>
+            <small>Banners, standees, brochures &amp; executive visiting cards</small>
+            <span class="arrow">→</span>
+          </div>
+        </div>
+
+        <!-- FOLDER 3: UX WEBSITES -->
+        <div class="folder" data-kind="ux-websites">
+          <div class="foldertab" style="background:#0c4a63"></div>
+          <div class="mini-stack">
+            <img src="assets/doctor-anywhere/doctor cover page.png" alt="Doctor Anywhere UI">
+            <img src="assets/UI DESIGNS/real estate.png" alt="Real Estate UI">
+            <img src="assets/UI DESIGNS/Desktop - 1.png" alt="Desktop Web UI">
+          </div>
+          <div class="folderbody" style="background:linear-gradient(145deg,#0a445c,#071e29);border-color:#2a7e9e66">
+            <h3>UX Websites</h3>
+            <small>Figma mobile apps, web platforms &amp; product UI systems</small>
+            <span class="arrow">→</span>
+          </div>
+        </div>
+
+        <!-- FOLDER 4: VIDEOS AND MOTION GRAPHICS -->
+        <div class="folder" data-kind="videos-motion">
+          <div class="foldertab" style="background:#521875"></div>
+          <div class="mini-stack">
+            <video class="mini-vid-thumb" muted loop preload="metadata">
+              <source src="assets/videos/reels/vindya final 1.mp4" type="video/mp4">
+            </video>
+            <video class="mini-vid-thumb" muted loop preload="metadata">
+              <source src="assets/videos/logo reveals/achieverrsday logo reveal.mp4" type="video/mp4">
+            </video>
+            <video class="mini-vid-thumb" muted loop preload="metadata">
+              <source src="assets/videos/reels/yasashwani ngi final 1.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="folderbody" style="background:linear-gradient(145deg,#4e156e,#240638);border-color:#9d38d466">
+            <h3>Videos &amp; Motion</h3>
+            <small>Reels, video edits, logo reveals &amp; motion graphics</small>
+            <span class="arrow">→</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 / ABOUT & CREATOR -->
+  <section id="about">
+    <div class="wrap about">
+      <div class="about-photo">
+        <video class="about-video" autoplay loop muted playsinline poster="assets/hero-portrait.png">
+          <source src="assets/magnific_animate-the-provided-character-in-a-perfectly-seam_wan_480p_4-5_30fps_51935.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="about-copy">
+        <div class="kicker">04 / Lead Designer &amp; Creative Founder</div>
+        <div class="creator-name-box">
+          <span class="creator-label">Lead Creative &amp; Strategist</span>
+          <h2 class="creator-name-title">SATISH KUMAR</h2>
+        </div>
+        <h3 class="creator-tagline">Graphic design at the core.<br><span class="gradient">Digital performance in motion.</span></h3>
+        <p><strong class="highlight-name">Satish Kumar</strong> is a multidisciplinary visual designer and digital marketing strategist. His work unites aesthetic refinement with commercial purpose — whether designing authoritative event posters, structuring high-density healthcare brochures, or engineering viral social video reels.</p>
+        <p>At <strong style="color:#fff">LUNAKRAFT</strong>, the philosophy is uncompromising: clarity before decoration, emotion before distraction, and results that make every client brand visibly shine.</p>
+        <div class="chips">
+          <span class="chip">Adobe Photoshop</span>
+          <span class="chip">Adobe Illustrator</span>
+          <span class="chip">Adobe InDesign</span>
+          <span class="chip">Figma</span>
+          <span class="chip">Premiere Pro</span>
+          <span class="chip">After Effects</span>
+          <span class="chip">Social Media Strategy</span>
+          <span class="chip">Meta Ad Creatives</span>
+          <span class="chip">UI/UX Prototyping</span>
+          <span class="chip">CMYK Prepress</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- MINIMAL HORIZONTAL CAREER PATHWAY: EDUCATION • INTERNSHIP • EXPERIENCE -->
+    <div class="wrap pathway-section">
+      <div class="pathway-header">
+        <div>
+          <div class="kicker" style="color:var(--teal)">Career Pathway &amp; Milestones</div>
+          <h3>Education, Internship &amp;<br><span class="gradient">Professional Experience.</span></h3>
+        </div>
+        <div class="pathway-controls">
+          <button class="pathway-nav-btn" id="pathwayScrollLeft" aria-label="Scroll Left">←</button>
+          <button class="pathway-nav-btn" id="pathwayScrollRight" aria-label="Scroll Right">→</button>
+        </div>
+      </div>
+
+      <div class="pathway-track-wrapper">
+        <div class="pathway-beam-line"></div>
+        <div class="pathway-scroll-container" id="pathwayScroll">
+
+          <!-- 01: DIPLOMA -->
+          <div class="path-step-node" style="--node-color:#a100ff">
+            <div class="path-step-marker">01</div>
+            <div class="path-minimal-card">
+              <div class="path-card-top">
+                <span class="path-badge edu">🎓 Education</span>
+                <span class="path-year">2018 – 2021</span>
+              </div>
+              <h4 class="path-card-role">Diploma in Mech Engg</h4>
+              <p class="path-card-org">Aditya Engineering College</p>
+            </div>
+          </div>
+
+          <!-- 02: B-TECH -->
+          <div class="path-step-node" style="--node-color:#7b2cbf">
+            <div class="path-step-marker">02</div>
+            <div class="path-minimal-card">
+              <div class="path-card-top">
+                <span class="path-badge edu">🎓 Degree</span>
+                <span class="path-year">2021 – 2024</span>
+              </div>
+              <h4 class="path-card-role">B-Tech in Mech Engg</h4>
+              <p class="path-card-org">Adarsh Engineering College</p>
+            </div>
+          </div>
+
+          <!-- 03: INTERNSHIP -->
+          <div class="path-step-node" style="--node-color:#00e5c3">
+            <div class="path-step-marker">03</div>
+            <div class="path-minimal-card">
+              <div class="path-card-top">
+                <span class="path-badge intern">💼 Internship</span>
+                <span class="path-year">Aug – Nov 2023</span>
+              </div>
+              <h4 class="path-card-role">Marketing Designer</h4>
+              <p class="path-card-org">Tekorse Technologies</p>
+            </div>
+          </div>
+
+          <!-- 04: EXPERIENCE - BHAVI -->
+          <div class="path-step-node" style="--node-color:#ffbd4a">
+            <div class="path-step-marker">04</div>
+            <div class="path-minimal-card">
+              <div class="path-card-top">
+                <span class="path-badge exp">⭐ Experience</span>
+                <span class="path-year">2024 – 2025</span>
+              </div>
+              <h4 class="path-card-role">Visual Designer</h4>
+              <p class="path-card-org">Bhavi Creations Pvt Ltd</p>
+            </div>
+          </div>
+
+          <!-- 05: EXPERIENCE - TORII -->
+          <div class="path-step-node" style="--node-color:#ff007f">
+            <div class="path-step-marker">05</div>
+            <div class="path-minimal-card">
+              <div class="path-card-top">
+                <span class="path-badge exp">🚀 Experience</span>
+                <span class="path-year">2025 – 2026</span>
+              </div>
+              <h4 class="path-card-role">Designer &amp; Marketing Creative</h4>
+              <p class="path-card-org">Torii Minds @ NCET</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- MINIMAL SPECIALTY CERTIFICATION STRIP -->
+      <div class="pathway-minimal-cert">
+        <div style="display:flex;align-items:center;gap:10px">
+          <span style="font-size:18px">🎨</span>
+          <span style="color:#fff;font-weight:600">Specialized Mastery • UI/UX Designing at PurpleLane</span>
+        </div>
+        <span style="color:#00e5c3;font-weight:600">Figma • Adobe XD • UI Systems</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 / STUDIO VISION -->
+  <section id="skills">
+    <div class="wrap">
+      <div class="agency">
+        <div class="kicker">05 / The LUNAKRAFT Studio Vision</div>
+        <h2>More than a portfolio.<br><span class="gradient">A growth powerhouse.</span></h2>
+        <p>LUNAKRAFT operates at the intersection of aesthetic distinction and marketing performance. We build complete visual engines: thumb-stopping social media content, authoritative print collateral, and interactive digital experiences that scale businesses.</p>
+        <div style="margin-top:28px">
+          <a class="btn primary" href="#contact">Start a Collaboration ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 / CONTACT -->
+  <section id="contact">
+    <div class="wrap contact">
+      <div>
+        <div class="kicker">06 / Connect &amp; Inquire</div>
+        <h2>Have a vision<br>ready to<br><span class="gradient">shine bright?</span></h2>
+        <p style="color:var(--muted);max-width:440px;margin-bottom:28px">Whether you need social media management, high-impact poster design, reels video editing, or end-to-end digital marketing, we are ready to build it.</p>
+        <a class="btn primary" href="mailto:satishkumar8179233470@gmail.com">Let's craft it →</a>
+      </div>
+      <div class="contact-card">
+        <div>
+          <strong>Direct Email</strong><br>
+          <a href="mailto:satishkumar8179233470@gmail.com" style="color:#d89eff;font-weight:600">satishkumar8179233470@gmail.com</a>
+        </div>
+        <div>
+          <strong>Primary Location</strong><br>
+          Andhra Pradesh, India (Available Globally)
+        </div>
+        <div>
+          <strong>Core Services</strong><br>
+          Social Media Management • Posters &amp; Brochures • Video Editing • Brand Identity • Meta Ads
+        </div>
+        <div>
+          <strong>Professional Network</strong><br>
+          <a href="https://www.linkedin.com/in/satish-kumar-508711277" target="_blank" style="color:#d89eff;font-weight:600">LinkedIn Profile ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="wrap footer">
+  <div style="display:flex;align-items:center;gap:10px">
+    <img src="assets/lunakraft-logo-emblem.png" style="width:24px;height:24px" alt="">
+    <strong>LUNAKRAFT</strong>
+  </div>
+  <span>We craft brands that shine.</span>
+  <span>© 2026 Satish Kumar. All rights reserved.</span>
+</footer>
+
+<!-- UNIVERSAL INTERACTIVE MODAL -->
+<div class="modal" id="modal">
+  <div class="modalbox">
+    <div class="modalhead">
+      <div>
+        <div class="kicker" id="modalKicker">Project Breakdown</div>
+        <h2 id="modalTitle">Graduation Day Poster</h2>
+      </div>
+      <button class="close-btn" id="modalClose">×</button>
+    </div>
+    <div id="modalBody">
+      <!-- Injected via JavaScript -->
+    </div>
+  </div>
+</div>
+
+<script>
+// RAW DATA CATALOG
+const postersList = [
+  { file: "NCET UG & PG Graduation day poster.png", title: "NCET UG & PG Graduation Day", sub: "Milestone Convocation Event Poster" },
+  { file: "torii post VLSI.jpg", title: "VLSI Semiconductor Design", sub: "Tech Workshop Announcement" },
+  { file: "NCMS brain teaser poster.jpg", title: "NCMS Brain Teaser Challenge", sub: "Interactive Student Engagement" },
+  { file: "NCET Cultural day.jpg", title: "NCET Cultural Festival", sub: "Campus Arts & Music Celebration" },
+  { file: "NCET ECE Robotics workshop.jpg", title: "ECE Robotics Workshop", sub: "Hardware & Tech Flyer" },
+  { file: "torii advanced excel post.png", title: "Advanced Excel Masterclass", sub: "Professional Skill Training" },
+  { file: "TORII Placement training for MCA.jpg", title: "MCA Placement Boot Camp", sub: "Career Training Poster" },
+  { file: "ask oncologist doctors day.jpg", title: "Ask the Oncologist • Doctors Day", sub: "Healthcare Awareness Graphic" },
+  { file: "placement training EVENT.png", title: "Placement Drive Launch", sub: "Corporate Campus Hiring Flyer" },
+  { file: "subhash july 3.jpg", title: "Subhash Commemorative Day", sub: "Tribute & Event Creative" }
+];
+
+const marketingCreativesList = [
+  // Brochures (category: 'brochure')
+  { file: "quality care broucher out side.jpg", path: "assets/brochures/quality care broucher out side.jpg", title: "Quality Care Super Speciality (Exterior)", sub: "3-Fold Clinical Hospital Brochure Spread", category: "brochure", badge: "Tri-Fold" },
+  { file: "quality care broucher inside page 2 & 3.jpg", path: "assets/brochures/quality care broucher inside page 2 & 3.jpg", title: "Quality Care Hospital (Inside Spread)", sub: "Medical Specialization, Departments & Infrastructure", category: "brochure", badge: "Tri-Fold" },
+  { file: "NUEROSTAR BROUCHER new 1 (1)_page-0002.jpg", path: "assets/brochures/NUEROSTAR BROUCHER new 1 (1)_page-0002.jpg", title: "NeuroStar Institute of Neuroscience", sub: "Neurology Department Clinical Overview", category: "brochure", badge: "Tri-Fold" },
+  { file: "NUEROSTAR BROUCHER DOCTOR BACK new 1 (1)-1.jpg", path: "assets/brochures/NUEROSTAR BROUCHER DOCTOR BACK new 1 (1)-1.jpg", title: "NeuroStar Specialist Doctor Profile", sub: "Consultant Schedules & Medical Credentials", category: "brochure", badge: "Tri-Fold" },
+  { file: "neurostar health broucher back new.jpg", path: "assets/brochures/neurostar health broucher back new.jpg", title: "NeuroStar Health Facility Back Panel", sub: "Emergency Contacts & Hospital Network Spread", category: "brochure", badge: "Tri-Fold" },
+  { file: "neurostar health broucher back.jpg", path: "assets/brochures/neurostar health broucher back.jpg", title: "NeuroStar Diagnostic Guide & Care Flap", sub: "Patient Pre-Consultation Roadmap & Guidelines", category: "brochure", badge: "Tri-Fold" },
+  { file: "bhavi 3 fold broucher new_.jpg", path: "assets/brochures/bhavi 3 fold broucher new_.jpg", title: "Bhavi Multi-Specialty Hospital (Front)", sub: "Commercial Healthcare Tri-Fold Spread", category: "brochure", badge: "Tri-Fold" },
+  { file: "bhavi 3 fold back broucher new.jpg", path: "assets/brochures/bhavi 3 fold back broucher new.jpg", title: "Bhavi Multi-Specialty Hospital (Back)", sub: "Emergency Services, Diagnostic & Contact Flap", category: "brochure", badge: "Tri-Fold" },
+
+  // Banners & Standees (category: 'banner')
+  { file: "ratnakar banner 10-20 1.jpg", path: "assets/banners/ratnakar banner 10-20 1.jpg", title: "Ratnakar Infrastructure Hoarding (10x20)", sub: "Large-Format Highway Commercial Billboard", category: "banner", badge: "Outdoor Billboard" },
+  { file: "Bluecrest 20-40 BANNER.jpg", path: "assets/banners/Bluecrest 20-40 BANNER.jpg", title: "Bluecrest Luxury Estates Hoarding (20x40)", sub: "Monumental Real Estate Highway Hoarding", category: "banner", badge: "Mega Hoarding" },
+  { file: "cocofarms banner 15-30.jpg", path: "assets/banners/cocofarms banner 15-30.jpg", title: "CocoFarms Agro-Resort Banner (15x30)", sub: "Eco-Living & Weekend Farmstay Promo Billboard", category: "banner", badge: "Large Banner" },
+  { file: "achievers day 8X12 WELCOME BANNER.jpg", path: "assets/banners/achievers day 8X12 WELCOME BANNER.jpg", title: "Achievers Day Stage Backdrop (8x12)", sub: "Grand Convocation Ceremony Welcome Banner", category: "banner", badge: "Stage Backdrop" },
+  { file: "achivers day 8 X 10 Testimonial banner.jpg", path: "assets/banners/achivers day 8 X 10 Testimonial banner.jpg", title: "Achievers Day Testimonial Wall (8x10)", sub: "Student Honor Roll & Placement Success Showcase", category: "banner", badge: "Event Banner" },
+  { file: "achievers day photo booth 8 x 4.jpg", path: "assets/banners/achievers day photo booth 8 x 4.jpg", title: "Achievers Day Photo Booth Wall (8x4)", sub: "Convocation Celebration Interactive Backdrop", category: "banner", badge: "Photo Booth" },
+  { file: "achievers day certificate.jpg", path: "assets/banners/achievers day certificate.jpg", title: "Achievers Day Certificate of Honor", sub: "High-Prestige Academic Milestone Recognition", category: "banner", badge: "Certificate" },
+  { file: "NCET UG & PG Graduation day 8 X 16 banner(1).jpg", path: "assets/banners/NCET UG & PG Graduation day 8 X 16 banner(1).jpg", title: "NCET Convocation Main Backdrop (8x16)", sub: "Auditorium Stage Backdrop for UG & PG Graduation", category: "banner", badge: "Main Stage" },
+  { file: "NCET UG & PG Graduation day WELCOME 8 X 10 BANNER.jpg", path: "assets/banners/NCET UG & PG Graduation day WELCOME 8 X 10 BANNER.jpg", title: "NCET Graduation Welcome Arch (8x10)", sub: "Campus Entrance Greeting & Felicitation Banner", category: "banner", badge: "Entrance Banner" },
+  { file: "NCET UG & PG Graduation day  & PRARAMBA 8 X 5 BANNER.jpg", path: "assets/banners/NCET UG & PG Graduation day  & PRARAMBA 8 X 5 BANNER.jpg", title: "NCET Prarambha & Graduation (8x5)", sub: "Student Felicitation & Induction Ceremonial Banner", category: "banner", badge: "Event Banner" },
+  { file: "NCET UG & PG Graduation day 2 X 3 PODIUM banner.jpg", path: "assets/banners/NCET UG & PG Graduation day 2 X 3 PODIUM banner.jpg", title: "NCET Convocation Dais Podium (2x3)", sub: "VIP Dignitary Stage & Speaker Podium Branding", category: "banner", badge: "Podium Banner" },
+  { file: "NCET UG & PG Graduation day  photo booth 8 x 4.jpg", path: "assets/banners/NCET UG & PG Graduation day  photo booth 8 x 4.jpg", title: "NCET Convocation Photo Booth (8x4)", sub: "Commemorative Student Convocation Selfie Wall", category: "banner", badge: "Photo Booth" },
+  { file: "NCET UG & PG Graduation day  Invitation.jpg", path: "assets/banners/NCET UG & PG Graduation day  Invitation.jpg", title: "NCET Convocation Official Invitation", sub: "Gold-Embossed Dignitary & Parent Formal Invitation", category: "banner", badge: "Invitation" },
+  { file: "NCET 16 X 8 Badminton Tournament BANNER.jpg", path: "assets/banners/NCET 16 X 8 Badminton Tournament BANNER.jpg", title: "NCET Badminton Championship (16x8)", sub: "Inter-Collegiate Sports Stadium Arena Banner", category: "banner", badge: "Sports Arena" },
+  { file: "NCET Praramba 8 x 5 Banner.jpg", path: "assets/banners/NCET Praramba 8 x 5 Banner.jpg", title: "NCET Prarambha Orientation Banner (8x5)", sub: "Freshman Academic Year Induction Stage Graphic", category: "banner", badge: "Event Banner" },
+  { file: "Standee_Prarambha_3X6 (1).jpg", path: "assets/banners/Standee_Prarambha_3X6 (1).jpg", title: "Prarambha Vertical Roll-Up Standee (3x6)", sub: "Campus Lobby Directional & Greeting Standee", category: "banner", badge: "Roll-up Standee" },
+  { file: "ai lab 16 x 7.66 feet wall back banner.jpg", path: "assets/banners/ai lab 16 x 7.66 feet wall back banner.jpg", title: "AI Mins Lab Futuristic Wall Mural (16x7.6)", sub: "Interior Tech Lab Holographic Theme Wall Mural", category: "banner", badge: "Interior Mural" },
+  { file: "wall banner AI 13x11.jpg", path: "assets/banners/wall banner AI 13x11.jpg", title: "AI Engineering Lab Wall Graphic (13x11)", sub: "Cybernetic Tech Center Interior Graphic Banner", category: "banner", badge: "Wall Graphic" },
+  { file: "eurokids banner reviews.jpg", path: "assets/banners/eurokids banner reviews.jpg", title: "EuroKids Preschool Reviews Banner", sub: "Parent Endorsement & Trust Building Roadside Banner", category: "banner", badge: "School Banner" },
+  { file: "eurokids_banner_10-3[1].jpg", path: "assets/banners/eurokids_banner_10-3[1].jpg", title: "EuroKids Admissions Campaign (10x3)", sub: "Early Childhood Admissions Outdoor Banner", category: "banner", badge: "Admissions Banner" },
+
+  // Visiting Cards (category: 'card')
+  { file: "Bhavi visiting card front.jpg", path: "assets/visiting cards/JPEG/Bhavi visiting card front.jpg", title: "Bhavi Multi-Specialty Visiting Card (Front)", sub: "Consultant Physician & Hospital Identity Card", category: "card", badge: "Executive Card" },
+  { file: "Bhavi visiting card back.jpg", path: "assets/visiting cards/JPEG/Bhavi visiting card back.jpg", title: "Bhavi Multi-Specialty Visiting Card (Back)", sub: "Diagnostic Departments & Emergency Contact Spread", category: "card", badge: "Executive Card" },
+  { file: "QUALITY CARE VISITING CARD FRONT.jpg", path: "assets/visiting cards/JPEG/QUALITY CARE VISITING CARD FRONT.jpg", title: "Quality Care Super Speciality Card (Front)", sub: "Senior Medical Specialist Identity & Credentials", category: "card", badge: "Medical Card" },
+  { file: "QUALITY CARE VISITING CARD BACK.jpg", path: "assets/visiting cards/JPEG/QUALITY CARE VISITING CARD BACK.jpg", title: "Quality Care Super Speciality Card (Back)", sub: "Healthcare Facilities, Location Map & Helplines", category: "card", badge: "Medical Card" },
+  { file: "B.V Subramanyam visiting card front.jpg", path: "assets/visiting cards/JPEG/B.V Subramanyam visiting card front.jpg", title: "B.V. Subramanyam Visiting Card (Front)", sub: "Corporate Executive Business Identity", category: "card", badge: "Corporate Card" },
+  { file: "B.V Subramanyam visiting card Back.jpg", path: "assets/visiting cards/JPEG/B.V Subramanyam visiting card Back.jpg", title: "B.V. Subramanyam Visiting Card (Back)", sub: "Executive Direct Channels & Office Details", category: "card", badge: "Corporate Card" },
+  { file: "foton visiting card front.jpg", path: "assets/visiting cards/JPEG/foton visiting card front.jpg", title: "Foton Decors Identity Card (Front)", sub: "Interior Architecture & Decor Studio Card", category: "card", badge: "Brand Identity" },
+  { file: "foton visiting card back psd.jpg", path: "assets/visiting cards/JPEG/foton visiting card back psd.jpg", title: "Foton Decors Identity Card (Back)", sub: "Studio Capabilities & Showroom Coordinates", category: "card", badge: "Brand Identity" },
+  { file: "smahita visiting card.jpg", path: "assets/visiting cards/JPEG/smahita visiting card.jpg", title: "Smahita Enterprise Visiting Card (Front)", sub: "Strategic Business Consulting Executive Card", category: "card", badge: "Business Card" },
+  { file: "smahita visiting card BACK.jpg", path: "assets/visiting cards/JPEG/smahita visiting card BACK.jpg", title: "Smahita Enterprise Visiting Card (Back)", sub: "Consulting Specializations & Regional Branches", category: "card", badge: "Business Card" },
+  { file: "sreerastu visiting card front 2.jpg", path: "assets/visiting cards/JPEG/sreerastu visiting card front 2.jpg", title: "Sreerastu Events Visiting Card (Front)", sub: "Luxury Event Management & Wedding Planning Card", category: "card", badge: "Luxury Card" },
+  { file: "sreerastu visiting card back 2.jpg", path: "assets/visiting cards/JPEG/sreerastu visiting card back 2.jpg", title: "Sreerastu Events Visiting Card (Back)", sub: "Event Coordination Highlights & Contact Information", category: "card", badge: "Luxury Card" }
+];
+const brochuresList = marketingCreativesList; // Backward-compatibility alias
+
+const uiDesignsList = [
+  {
+    path: "assets/doctor-anywhere/doctor cover page.png",
+    title: "Doctor Anywhere — Telemedicine Mobile UI/UX",
+    sub: "Comprehensive mobile healthcare platform featuring 1-tap doctor booking, live video consultation & doorstep digital pharmacy",
+    badge: "Mobile UI / Figma"
+  },
+  {
+    path: "assets/UI DESIGNS/real estate.png",
+    title: "Real Estate & Luxury Living Platform UI",
+    sub: "Figma web UI featuring interactive property listings, mortgage estimation & amenity filters",
+    badge: "Figma Web UI"
+  },
+  {
+    path: "assets/UI DESIGNS/Desktop - 1.png",
+    title: "Desktop SaaS Analytics & CRM Dashboard",
+    sub: "Enterprise desktop UI system with financial telemetry, conversion analytics & client pipeline",
+    badge: "Desktop Dashboard"
+  },
+  {
+    path: "assets/UI DESIGNS/Frame 1.jpg",
+    title: "Modern Mobile & Digital Product Interface",
+    sub: "Mobile/web application UI with dark-luxe typography, atomic cards & intuitive action flow",
+    badge: "Mobile / Product UI"
+  }
+];
+
+const videosList = [
+  // Reels (type: 'reel')
+  { file: 'assets/videos/reels/vindya final 1.mp4', title: 'Vindya Skin & Hair Clinic', sub: 'Beauty clinic promo reel with kinetic cuts', type: 'reel', aspect: 'portrait' },
+  { file: 'assets/videos/reels/yasashwani ngi final 1.mp4', title: 'Yasashwani NGI Results Reel', sub: 'Before & after client transformation reel', type: 'reel', aspect: 'portrait' },
+  { file: 'assets/videos/reels/srinivasa kakinada pilla testimonial.mp4', title: 'Srinivasa Kakinada Testimonial', sub: 'Authentic customer video testimonial', type: 'reel', aspect: 'portrait' },
+  { file: 'assets/videos/reels/srihari melasma reel.mp4', title: 'Srihari Melasma Derma Reel', sub: 'Dermatology treatment showcase reel', type: 'reel', aspect: 'portrait' },
+  { file: 'assets/videos/reels/krishna testmonial.mp4', title: 'Krishna Clinic Testimonial', sub: 'Healthcare patient experience testimonial', type: 'reel', aspect: 'portrait' },
+  { file: 'assets/videos/leela womens finalised.mp4', title: 'Leela Women\'s Clinic Promo', sub: 'Maternity & healthcare Instagram reel', type: 'reel', aspect: 'portrait' },
+  { file: 'assets/videos/final final match.mp4', title: 'Match Highlight Sports Reel', sub: 'Fast-paced athletic competition reel', type: 'reel', aspect: 'landscape' },
+
+  // Videos / Commercials (type: 'video')
+  { file: 'assets/videos/KRISHNA DENTAL VIDEO_2.mp4', title: 'Krishna Dental Brand Film', sub: 'Commercial healthcare facility showcase', type: 'video', aspect: 'portrait' },
+  { file: 'assets/videos/apple dental shoot new 1.mp4', title: 'Apple Dental Clinic Shoot', sub: 'Professional cinematic clinic ad shoot', type: 'video', aspect: 'landscape' },
+  { file: 'assets/videos/torii video NEW.mp4', title: 'Torii Minds Campaign Video', sub: 'High-energy student recruitment campaign', type: 'video', aspect: 'landscape' },
+
+  // Logo Reveals (type: 'logo')
+  { file: 'assets/videos/Bhavi pvt ltd logo[1]_2.mp4', title: 'Bhavi Pvt Ltd 3D Logo Reveal', sub: 'Corporate brand identity animation', type: 'logo', aspect: 'portrait' },
+  { file: 'assets/videos/logo reveals/achieverrsday logo reveal.mp4', title: 'AchieversDay Brand Reveal', sub: 'Luxury gold & dark metallic logo motion', type: 'logo', aspect: 'portrait' },
+  { file: 'assets/videos/logo reveals/ai mins lab logo reveal.mp4', title: 'AI Mins Lab Cyber Reveal', sub: 'Futuristic AI technology brand intro', type: 'logo', aspect: 'portrait' },
+  { file: 'assets/videos/logo reveals/ai ready engineer logo reveal.mp4', title: 'AI Ready Engineer Motion', sub: 'EdTech engineering animation reveal', type: 'logo', aspect: 'portrait' },
+  { file: 'assets/videos/logo reveals/Chromatic Sketch Intro.mp4', title: 'Chromatic Sketch Creative Intro', sub: 'Artistic prism & sketch motion intro', type: 'logo', aspect: 'landscape' },
+  { file: 'assets/videos/logo reveals/FINAL RENDER.mp4', title: 'Final Render Motion Graphics', sub: 'High-impact 3D render animation sequence', type: 'logo', aspect: 'landscape' },
+  { file: 'assets/videos/logo reveals/Logo_and_Network_globe.mp4', title: 'Network Globe 3D Reveal', sub: 'Global network holographic logo reveal', type: 'logo', aspect: 'landscape' },
+  { file: 'assets/videos/logo reveals/Main Comp.mp4', title: 'Main Comp Motion Identity', sub: 'Clean cybernetic motion graphics intro', type: 'logo', aspect: 'portrait' },
+  { file: 'assets/videos/logo reveals/NGI Animation.mp4', title: 'NGI Institute Brand Animation', sub: 'Academic institutional motion mark', type: 'logo', aspect: 'portrait' },
+  { file: 'assets/videos/logo reveals/ngi final 2.mp4', title: 'NGI Final Full Reveal', sub: 'Polished brand reveal with sound design', type: 'logo', aspect: 'portrait' },
+  { file: 'assets/videos/logo reveals/project talk.mp4', title: 'Project Talk Showcase Motion', sub: 'Event teaser & presentation motion graphics', type: 'logo', aspect: 'portrait' }
+];
+
+// CASE STUDY DEEP DIVE DATA
+const caseStudies = {
+  graduation: {
+    kicker: "02 / Flagship Poster Case Study",
+    title: "NCET UG & PG Graduation Day Poster",
+    img: "assets/posters/NCET UG & PG Graduation day poster.png",
+    theme: "Regal Academic Prestige & Golden Horizon of Achievement",
+    themeDesc: "An atmospheric balance of deep midnight blue with radiant golden aura. The lighting signifies the illumination of knowledge and the threshold of career triumph, pairing monumental convocation iconography with high-dignity typography.",
+    tools: ["Adobe Photoshop", "Adobe Illustrator", "Figma", "Digital Color Grading", "Volumetric Lighting"],
+    thoughtProcess: "Academic posters run the risk of becoming text-heavy and bureaucratic. The core challenge was striking an emotional chord for graduating students and proud families while honoring institutional protocol for Nagarjuna College of Engineering & Technology. We structured a three-tiered reading hierarchy: 1) Instant milestone excitement through celebratory golden lighting and convocation cap iconography, 2) Academic authority through clear distinction between UG and PG convocations, and 3) Seamless logistical scanning for date, venue, chief guest dignitaries, and registration details.",
+    howItWasMade: [
+      { step: "1. Compositional Architecture", text: "Built upon an authoritative golden-ratio grid with the triumphal celebratory graduate silhouette occupying the upper golden third, drawing the eye naturally down through the event details." },
+      { step: "2. Atmospheric Volumetric Lighting", text: "Crafted in Photoshop with layered radial gradient passes and Linear Dodge flares to simulate a stage spotlight effect against deep midnight navy." },
+      { step: "3. Dual-Type Pairing & Hierarchy", text: "Locked high-prestige serif headlines for 'Graduation Day' with crisp geometric sans-serif for time, date, venue, and guest designations to ensure total readability from 10 feet away." },
+      { step: "4. Cross-Channel Scaling", text: "Engineered in high-resolution vector and raster composites capable of outputting across campus physical billboards, A3 flyers, and Instagram invitations without loss of crispness." }
+    ]
+  },
+
+  telehealth: {
+    kicker: "02 / Flagship UI/UX Case Study • Behance Showcase",
+    title: "Doctor Anywhere — Telemedicine Mobile UI/UX",
+    behanceUrl: "https://www.behance.net/gallery/183722873/Doctor-Anywhere-Mobile-App-UI-Case-Study",
+    img: "assets/doctor-anywhere/doctor cover page.png",
+    slides: [
+      { file: "assets/doctor-anywhere/doctor cover page.png", title: "Project Cover & Brand Identity", desc: "Doctor Anywhere — Telemedicine & Healthcare Mobile App UI/UX Case Study presentation" },
+      { file: "assets/doctor-anywhere/landing 1.png", title: "Project Overview & Problem Statement", desc: "Overcoming long clinic wait times, appointment friction, and fragmented medication fulfillment" },
+      { file: "assets/doctor-anywhere/landing 2.png", title: "Information Architecture & User Flows", desc: "4-step triage flow: symptom intake → specialist match → live video consultation → digital pharmacy" },
+      { file: "assets/doctor-anywhere/landing 3.png", title: "Low-Fidelity Wireframes & Ideation", desc: "Iterative exploration of appointment booking layouts, telemetry data blocks and emergency toggles" },
+      { file: "assets/doctor-anywhere/landing 4.png", title: "Design System & UI Components", desc: "Medical teal (#00E5C3) color system, atomic typography scales, pill badges and accessible input fields" },
+      { file: "assets/doctor-anywhere/landing 5.png", title: "Doctor Consultation & Video Interface", desc: "High-fidelity screens for doctor specialty search, real-time availability calendar & video consultation" },
+      { file: "assets/doctor-anywhere/landing 6.png", title: "Digital Pharmacy & Prescription Delivery", desc: "Integrated digital pharmacy cart, medication dose schedules and doorstep delivery tracking" },
+      { file: "assets/doctor-anywhere/landing 7.png", title: "Key Learnings & Impact Showcase", desc: "Accessibility benchmarks (WCAG AA), rapid booking conversion rates and design retrospectives" }
+    ],
+    theme: "Calm Clinical Telehealth & Anxiety-Free Patient Flow",
+    themeDesc: "Clinical medical teal (#00E5C3) paired with deep midnight navy (#071724) and porcelain white. The visual psychology aims to immediately de-escalate anxiety for sick or worried users seeking virtual medical consultations.",
+    tools: ["Figma", "FigJam", "Information Architecture", "Design System Tokens", "Interactive Prototyping", "WCAG AA Accessibility"],
+    thoughtProcess: "When users open a telehealth app, they are often stressed, in pain, or pressed for time. Complex menus and multi-step forms lead to high abandonment. The UX objective was to cut the consultation booking flow to under 60 seconds while establishing absolute doctor trust. We designed a clear 1-tap specialist directory, real-time doctor availability indicators, live video telemetry with doctor credentials, and an integrated doorstep digital pharmacy checkout.",
+    howItWasMade: [
+      { step: "1. Problem Discovery & Empathy Research", text: "Interviewed everyday patients and analyzed leading telehealth platforms to identify key friction points: uncertain wait times, lack of transparent doctor fees, and disjointed medicine fulfillment." },
+      { step: "2. Information Architecture & Wireframing", text: "Mapped out a 4-step triage flow: Specialty selection → Verified Doctor Profiles → Live Consultation / Video Call → Instant Prescription & Doorstep Delivery." },
+      { step: "3. Atomic Design System in Figma", text: "Constructed comprehensive Figma component libraries using auto-layout, design tokens for color and typography, accessible status tags, and interactive date-time picker variants." },
+      { step: "4. Telemedicine Video Interface & Trust Signals", text: "Designed a clean in-call interface with doctor licensing badges, audio/video toggles, and live in-call prescription notes to keep patients reassured." },
+      { step: "5. Digital Pharmacy & Medication Tracker", text: "Engineered an e-pharmacy checkout system that auto-populates medications prescribed during the consultation with dosage schedules and real-time delivery tracking." }
+    ]
+  }
+};
+
+// MODAL CONTROLS
+const modal = document.getElementById("modal");
+const modalTitle = document.getElementById("modalTitle");
+const modalKicker = document.getElementById("modalKicker");
+const modalBody = document.getElementById("modalBody");
+const modalClose = document.getElementById("modalClose");
+
+let activeCollectionKind = null;
+let activeCaseKey = null;
+let currentCaseSlideIdx = 0;
+
+function closeModal() {
+  const v = document.getElementById("modalVidPlayer");
+  if (v) { v.pause(); v.src = ""; }
+  activeCollectionKind = null;
+  activeCaseKey = null;
+  modal.classList.remove("open");
+  document.body.style.overflow = "";
+  modalClose.onclick = closeModal;
+}
+
+function returnToCollection() {
+  const v = document.getElementById("modalVidPlayer");
+  if (v) { v.pause(); v.src = ""; }
+  if (activeCollectionKind) {
+    openFolderCollection(activeCollectionKind);
+  } else if (activeCaseKey) {
+    openCaseModal(activeCaseKey);
+  } else {
+    closeModal();
+  }
+}
+
+function returnToCaseModal() {
+  if (activeCaseKey) {
+    openCaseModal(activeCaseKey);
+  } else {
+    closeModal();
+  }
+}
+
+function changeCaseSlide(step) {
+  const data = caseStudies[activeCaseKey || "telehealth"];
+  if (!data || !data.slides) return;
+  currentCaseSlideIdx = (currentCaseSlideIdx + step + data.slides.length) % data.slides.length;
+  const slide = data.slides[currentCaseSlideIdx];
+  const imgElem = document.getElementById("caseSlideImg");
+  const countElem = document.getElementById("caseSlideCount");
+  const titleElem = document.getElementById("caseSlideTitle");
+  const descElem = document.getElementById("caseSlideDesc");
+  if (imgElem) imgElem.src = slide.file;
+  if (countElem) countElem.textContent = `Slide ${currentCaseSlideIdx + 1} of ${data.slides.length}`;
+  if (titleElem) titleElem.textContent = slide.title;
+  if (descElem) descElem.textContent = slide.desc;
+}
+
+modalClose.onclick = closeModal;
+modal.onclick = (e) => {
+  if (e.target === modal) {
+    const v = document.getElementById("modalVidPlayer");
+    if (v && activeCollectionKind) {
+      returnToCollection();
+    } else {
+      closeModal();
+    }
+  }
+};
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    const v = document.getElementById("modalVidPlayer");
+    if (v && activeCollectionKind) {
+      returnToCollection();
+    } else {
+      closeModal();
+    }
+  }
+});
+
+// OPEN CASE STUDY MODAL
+function openCaseModal(caseKey) {
+  const data = caseStudies[caseKey];
+  if (!data) return;
+
+  activeCaseKey = caseKey;
+  activeCollectionKind = null;
+  currentCaseSlideIdx = 0;
+  modalClose.onclick = closeModal;
+
+  modalKicker.textContent = data.kicker;
+  modalTitle.textContent = data.title;
+
+  let previewHTML = "";
+  if (data.slides && data.slides.length > 0) {
+    previewHTML = `
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div style="position:relative;border-radius:12px;overflow:hidden;background:#060a12;border:1px solid rgba(0,229,195,.2);box-shadow:0 12px 35px rgba(0,0,0,.5);cursor:pointer" onclick="openSingleImage(caseStudies['${caseKey}'].slides[currentCaseSlideIdx].file, caseStudies['${caseKey}'].slides[currentCaseSlideIdx].title, caseStudies['${caseKey}'].slides[currentCaseSlideIdx].desc)">
+          <img id="caseSlideImg" src="${data.slides[0].file}" alt="${data.slides[0].title}" style="width:100%;max-height:460px;object-fit:contain;display:block">
+          <div style="position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,.7);backdrop-filter:blur(6px);padding:4px 10px;border-radius:99px;font-size:10px;color:#00e5c3;font-weight:700">🔍 Click to Expand</div>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;padding:4px 2px">
+          <div>
+            <div id="caseSlideTitle" style="font-size:13px;font-weight:700;color:#fff">${data.slides[0].title}</div>
+            <div id="caseSlideDesc" style="font-size:11px;color:#85a2ab">${data.slides[0].desc}</div>
+          </div>
+          <span id="caseSlideCount" style="font-size:11px;font-weight:800;color:#00e5c3;background:rgba(0,229,195,.12);padding:3px 10px;border-radius:99px;white-space:nowrap">Slide 1 of ${data.slides.length}</span>
+        </div>
+        <div style="display:flex;gap:10px;align-items:center;margin-top:2px">
+          <button onclick="changeCaseSlide(-1)" class="btn" style="flex:1;padding:8px 12px;font-size:12px;justify-content:center">← Previous Slide</button>
+          <button onclick="changeCaseSlide(1)" class="btn" style="flex:1;padding:8px 12px;font-size:12px;justify-content:center">Next Slide →</button>
+        </div>
+        ${data.behanceUrl ? `
+          <a href="${data.behanceUrl}" target="_blank" rel="noopener noreferrer" class="btn primary" style="width:100%;margin-top:4px;padding:10px 16px;font-size:12.5px;justify-content:center;text-decoration:none">
+            View Live Case Study on Behance ↗
+          </a>
+        ` : ''}
+      </div>
+    `;
+  } else {
+    previewHTML = `
+      <div style="position:relative;border-radius:12px;overflow:hidden;background:#07070d;border:1px solid var(--panel-border);cursor:pointer" onclick="openSingleImage('${data.img}', '${data.title.replace(/'/g, "\\'")}', '')">
+        <img src="${data.img}" alt="${data.title}" style="width:100%;max-height:460px;object-fit:contain;display:block">
+        <div style="position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,.7);backdrop-filter:blur(6px);padding:4px 10px;border-radius:99px;font-size:10px;color:var(--gold);font-weight:700">🔍 Click to Zoom</div>
+      </div>
+    `;
+  }
+
+  modalBody.innerHTML = `
+    <div class="case-modal-grid">
+      <div class="case-modal-preview">
+        ${previewHTML}
+      </div>
+      <div>
+        <div class="case-detail-box">
+          <h4>🎨 The Theme &amp; Visual Aesthetic</h4>
+          <p><strong>${data.theme}</strong> — ${data.themeDesc}</p>
+        </div>
+
+        <div class="case-detail-box">
+          <h4>🛠️ Tools &amp; Technologies Used</h4>
+          <div class="case-tool-chips">
+            ${data.tools.map(t => `<span class="case-tool-chip">${t}</span>`).join("")}
+          </div>
+        </div>
+
+        <div class="case-detail-box">
+          <h4>🧠 Creative Thought Process &amp; Strategy</h4>
+          <p>${data.thoughtProcess}</p>
+        </div>
+
+        <div class="case-detail-box">
+          <h4>📐 How It Was Made (Step-by-Step Breakdown)</h4>
+          <div style="display:flex;flex-direction:column;gap:12px;margin-top:10px">
+            ${data.howItWasMade.map(s => `
+              <div style="border-left:2px solid var(--purple);padding-left:12px">
+                <strong style="color:#f0eef7;font-size:13px;display:block">${s.step}</strong>
+                <span style="color:#b3afc4;font-size:13px;line-height:1.55">${s.text}</span>
+              </div>
+            `).join("")}
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+
+  modal.classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+
+// OPEN FOLDER GALLERY COLLECTION
+function openFolderCollection(kind) {
+  activeCollectionKind = kind;
+  modalClose.onclick = closeModal;
+
+  let title = "Portfolio Archive";
+  let kicker = "Collection View";
+  let contentHTML = "";
+
+  if (kind === "posters") {
+    title = "Posters (Digital Designs & Event Creatives)";
+    kicker = "03 / Works Archive • Posters";
+    contentHTML = `
+      <div class="modal-gallery">
+        ${postersList.map(p => `
+          <div onclick="openSingleImage('assets/posters/${encodeURIComponent(p.file)}', '${p.title}', '${p.sub}')" style="cursor:pointer">
+            <img src="assets/posters/${encodeURIComponent(p.file)}" alt="${p.title}">
+            <div style="padding:8px 4px">
+              <strong style="font-size:13px;display:block">${p.title}</strong>
+              <span style="font-size:11px;color:var(--muted)">${p.sub}</span>
+            </div>
+          </div>
+        `).join("")}
+      </div>
+    `;
+  } else if (kind === "marketing") {
+    title = "Marketing Creatives (Brochures, Banners & Collateral)";
+    kicker = "03 / Works Archive • Marketing";
+    const brochureCount = marketingCreativesList.filter(m => m.category === 'brochure').length;
+    const bannerCount = marketingCreativesList.filter(m => m.category === 'banner').length;
+    const cardCount = marketingCreativesList.filter(m => m.category === 'card').length;
+
+    contentHTML = `
+      <div class="video-filter-bar" id="mktFilterBar">
+        <button class="v-tab active" data-filter="all">All Collateral (${marketingCreativesList.length})</button>
+        <button class="v-tab" data-filter="brochure">Brochures (${brochureCount})</button>
+        <button class="v-tab" data-filter="banner">Banners &amp; Standees (${bannerCount})</button>
+        <button class="v-tab" data-filter="card">Visiting Cards (${cardCount})</button>
+      </div>
+      <div class="modal-gallery" id="mktGallery">
+        ${marketingCreativesList.map(m => `
+          <div class="marketing-card" data-category="${m.category}" onclick="openSingleImage('${m.path.replace(/'/g, "\\'")}', '${m.title.replace(/'/g, "\\'")}', '${m.sub.replace(/'/g, "\\'")}')" style="cursor:pointer">
+            <div style="position:relative;overflow:hidden;border-radius:12px;background:#0d0b18;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center">
+              <img src="${m.path}" alt="${m.title}" style="width:100%;height:100%;object-fit:cover;transition:transform .3s ease">
+              <span style="position:absolute;top:8px;left:8px;padding:3px 8px;border-radius:99px;font-size:9px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;${m.category === 'brochure' ? 'background:rgba(0,229,195,.85);color:#07242c' : m.category === 'banner' ? 'background:rgba(255,189,74,.85);color:#1a0e00' : 'background:rgba(199,125,255,.85);color:#0e0720'}">${m.badge}</span>
+            </div>
+            <div style="padding:10px 4px 4px">
+              <strong style="font-size:13px;display:block;color:#f0eef7;line-height:1.35;margin-bottom:3px">${m.title}</strong>
+              <span style="font-size:11px;color:var(--muted);line-height:1.3;display:block">${m.sub}</span>
+            </div>
+          </div>
+        `).join("")}
+      </div>
+    `;
+  } else if (kind === "ux-websites") {
+    title = "UX Websites & Digital Products Archive";
+    kicker = "03 / Works Archive • UX Websites";
+    contentHTML = `
+      <div style="margin-bottom:14px">
+        <div style="font-size:11.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#00e5c3;margin:0 0 16px;padding:4px 0;border-bottom:1px solid rgba(0,229,195,.2)">
+          📐 Figma UI Designs &amp; Mobile Products (${uiDesignsList.length})
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px">
+          ${uiDesignsList.map(ui => `
+            <div class="case-card" onclick="openSingleImage('${ui.path.replace(/'/g, "\\'")}', '${ui.title.replace(/'/g, "\\'")}', '${ui.sub.replace(/'/g, "\\'")}')" style="cursor:pointer">
+              <div class="case-thumb" style="aspect-ratio:16/10;background:#0d0b18;overflow:hidden">
+                <img src="${ui.path}" alt="${ui.title}" style="width:100%;height:100%;object-fit:cover;transition:transform .3s ease">
+              </div>
+              <div class="case-body" style="padding:14px">
+                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px">
+                  <span style="font-size:9.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#00e5c3;background:rgba(0,229,195,.12);padding:2px 8px;border-radius:99px">${ui.badge}</span>
+                </div>
+                <h3 style="font-size:14px;font-weight:700;margin:0 0 4px;color:#f0eef7">${ui.title}</h3>
+                <p class="case-desc" style="font-size:12px;margin:0;color:#9b97ad;line-height:1.4">${ui.sub}</p>
+              </div>
+            </div>
+          `).join("")}
+        </div>
+      </div>
+    `;
+  } else if (kind === "videos-motion") {
+    title = "Videos & Motion Graphics Archive";
+    kicker = "03 / Works Archive • Motion";
+
+    const reelCount = videosList.filter(v => v.type === 'reel').length;
+    const videoCount = videosList.filter(v => v.type === 'video').length;
+    const logoCount = videosList.filter(v => v.type === 'logo').length;
+
+    contentHTML = `
+      <style>
+        .vid-grid{
+          display:grid;
+          grid-template-columns:repeat(auto-fill,minmax(170px,1fr));
+          gap:14px;
+          margin-bottom:28px;
+        }
+        .vid-card{
+          background:#12101e;
+          border:1px solid rgba(255,255,255,.07);
+          border-radius:14px;
+          overflow:hidden;
+          cursor:pointer;
+          transition:border-color .1s ease, transform .1s ease, box-shadow .1s ease;
+        }
+        .vid-card:hover{
+          border-color:#a100ff;
+          transform:translateY(-4px);
+          box-shadow:0 12px 32px rgba(161,0,255,.3);
+        }
+        .vid-card-thumb{
+          position:relative;
+          aspect-ratio:9/16;
+          overflow:hidden;
+          background:#0a0914;
+        }
+        .vid-card-thumb video{
+          width:100%;
+          height:100%;
+          object-fit:cover;
+          display:block;
+        }
+        .vid-card-thumb.landscape{
+          aspect-ratio:16/9;
+        }
+        .vid-play-overlay{
+          position:absolute;
+          inset:0;
+          background:rgba(0,0,0,.3);
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          transition:background .1s;
+        }
+        .vid-card:hover .vid-play-overlay{background:rgba(161,0,255,.25)}
+        .vid-play-btn{
+          width:44px;
+          height:44px;
+          border-radius:50%;
+          background:linear-gradient(135deg,#8d00e8,#c77dff);
+          display:grid;
+          place-items:center;
+          color:#fff;
+          font-size:16px;
+          box-shadow:0 8px 20px rgba(0,0,0,.5);
+          transition:transform .1s;
+        }
+        .vid-card:hover .vid-play-btn{transform:scale(1.12)}
+        .vid-cat-pill{
+          position:absolute;
+          top:8px;
+          left:8px;
+          padding:3px 8px;
+          border-radius:99px;
+          font-size:9px;
+          font-weight:800;
+          letter-spacing:.08em;
+          text-transform:uppercase;
+        }
+        .vid-cat-pill.reel{background:rgba(0,229,195,.85);color:#07242c}
+        .vid-cat-pill.logo{background:rgba(199,125,255,.85);color:#0e0720}
+        .vid-cat-pill.video{background:rgba(255,189,74,.85);color:#1a0e00}
+        .vid-card-info{
+          padding:10px 12px;
+          display:flex;
+          flex-direction:column;
+          gap:3px;
+        }
+        .vid-card-info strong{
+          font-size:12px;
+          font-weight:700;
+          color:#f0eef7;
+          line-height:1.3;
+        }
+        .vid-card-info span{
+          font-size:10.5px;
+          color:#7d7a90;
+        }
+      </style>
+
+      <div class="video-filter-bar">
+        <button class="v-tab active" data-filter="all">All Motion (${videosList.length})</button>
+        <button class="v-tab" data-filter="video">Videos &amp; Ads (${videoCount})</button>
+        <button class="v-tab" data-filter="reel">Reels (${reelCount})</button>
+        <button class="v-tab" data-filter="logo">Logo Reveals (${logoCount})</button>
+      </div>
+
+      <div class="vid-grid" id="vidArchiveGrid">
+        ${videosList.map(v => `
+          <div class="vid-card" data-category="${v.type}" onclick="playVideoInModal('${v.file}', '${v.title.replace(/'/g, "\\'")}', '${v.sub.replace(/'/g, "\\'")}')">
+            <div class="vid-card-thumb ${v.aspect === 'landscape' ? 'landscape' : ''}">
+              <video muted loop preload="metadata"><source src="${v.file}" type="video/mp4"></video>
+              <div class="vid-play-overlay"><div class="vid-play-btn">▶</div></div>
+              <span class="vid-cat-pill ${v.type}">${v.type === 'video' ? 'Video' : v.type === 'reel' ? 'Reel' : 'Logo Reveal'}</span>
+            </div>
+            <div class="vid-card-info">
+              <strong>${v.title}</strong>
+              <span>${v.sub}</span>
+            </div>
+          </div>
+        `).join("")}
+      </div>
+    `;
+  }
+
+  modalKicker.textContent = kicker;
+  modalTitle.textContent = title;
+  modalBody.innerHTML = contentHTML;
+  modal.classList.add("open");
+  document.body.style.overflow = "hidden";
+
+  // Attach filter event listeners for marketing archive
+  if (kind === "marketing") {
+    const tabs = modalBody.querySelectorAll("#mktFilterBar .v-tab");
+    const cards = modalBody.querySelectorAll("#mktGallery .marketing-card");
+    tabs.forEach(tab => {
+      tab.addEventListener("click", () => {
+        tabs.forEach(t => t.classList.remove("active"));
+        tab.classList.add("active");
+        const filter = tab.dataset.filter;
+        cards.forEach(card => {
+          if (filter === "all" || card.dataset.category === filter) {
+            card.style.display = "";
+          } else {
+            card.style.display = "none";
+          }
+        });
+      });
+    });
+  }
+
+  // Attach filter event listeners for video archive
+  if (kind === "videos-motion") {
+    const tabs = modalBody.querySelectorAll(".v-tab");
+    const cards = modalBody.querySelectorAll(".vid-card");
+    tabs.forEach(tab => {
+      tab.addEventListener("click", () => {
+        tabs.forEach(t => t.classList.remove("active"));
+        tab.classList.add("active");
+        const filter = tab.dataset.filter;
+        cards.forEach(card => {
+          if (filter === "all" || card.dataset.category === filter) {
+            card.style.display = "";
+          } else {
+            card.style.display = "none";
+          }
+        });
+      });
+    });
+  }
+}
+
+// OPEN SINGLE IMAGE LIGHTBOX (DIRECT VISUAL VIEW - NO CASE STUDY TEXT)
+function openSingleImage(imgSrc, title, sub) {
+  modalKicker.textContent = activeCollectionKind ? "Portfolio Collection View" : activeCaseKey ? "Case Study Deep Dive" : "Creative Visual Archive";
+  modalTitle.textContent = title || "Artwork Design";
+  
+  let backBtnHTML = '';
+  if (activeCollectionKind) {
+    backBtnHTML = `
+      <div style="margin-bottom:14px;display:flex;justify-content:flex-start">
+        <button onclick="returnToCollection()" class="btn ghost" style="padding:6px 14px;font-size:12px;border:1px solid rgba(255,255,255,.15);display:inline-flex;align-items:center;gap:6px">
+          ← Back to Collection
+        </button>
+      </div>
+    `;
+    modalClose.onclick = () => returnToCollection();
+  } else if (activeCaseKey) {
+    backBtnHTML = `
+      <div style="margin-bottom:14px;display:flex;justify-content:flex-start">
+        <button onclick="returnToCaseModal()" class="btn ghost" style="padding:6px 14px;font-size:12px;border:1px solid rgba(255,255,255,.15);display:inline-flex;align-items:center;gap:6px">
+          ← Back to Case Study
+        </button>
+      </div>
+    `;
+    modalClose.onclick = () => returnToCaseModal();
+  } else {
+    modalClose.onclick = closeModal;
+  }
+
+  modalBody.innerHTML = `
+    ${backBtnHTML}
+    <div style="text-align:center">
+      <img src="${imgSrc}" style="max-width:100%;max-height:72vh;object-fit:contain;border-radius:14px;border:1px solid var(--panel-border);box-shadow:0 20px 60px rgba(0,0,0,.75);background:#07070d">
+      ${sub ? `<p style="margin-top:14px;color:var(--muted);font-size:14.5px;font-weight:500">${sub}</p>` : ''}
+    </div>
+  `;
+  modal.classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+
+// BIND FOLDER CLICKS
+document.querySelectorAll(".folder").forEach(f => {
+  f.onclick = () => openFolderCollection(f.dataset.kind);
+});
+
+
+// HERO BULB LIGHT & POINTER TRACKING INTERACTION
+const track = document.getElementById("heroTrack");
+const portrait = document.querySelector(".portrait");
+const bulbGlow = document.querySelector(".bulb-glow");
+let tx = 0, ty = 0, cx = 0, cy = 0;
+
+if (track && portrait && bulbGlow) {
+  track.addEventListener("pointermove", (e) => {
+    const r = track.getBoundingClientRect();
+    tx = Math.max(-1, Math.min(1, (e.clientX - r.left) / r.width * 2 - 1));
+    ty = Math.max(-1, Math.min(1, (e.clientY - r.top) / r.height * 2 - 1));
+    const bx = r.left + r.width * 0.79;
+    const by = r.top + r.height * 0.36;
+    const d = Math.hypot(e.clientX - bx, e.clientY - by);
+    const power = Math.max(0, 1 - d / (r.width * 0.42));
+    bulbGlow.style.opacity = (0.45 + power * 0.55).toFixed(2);
+    bulbGlow.style.transform = `translate(-50%,-50%) scale(${(0.9 + power * 0.22).toFixed(2)})`;
+  });
+
+  track.addEventListener("pointerleave", () => {
+    tx = 0;
+    ty = 0;
+    bulbGlow.style.opacity = "0.55";
+    bulbGlow.style.transform = "translate(-50%,-50%) scale(0.9)";
+  });
+
+  function animateHero() {
+    cx += (tx - cx) * 0.08;
+    cy += (ty - cy) * 0.08;
+    portrait.style.setProperty("--px", `${cx * 5}px`);
+    portrait.style.setProperty("--py", `${cy * 3}px`);
+    portrait.style.setProperty("--rot", `${cx * 0.7}deg`);
+    portrait.classList.add("is-reacting");
+    requestAnimationFrame(animateHero);
+  }
+  animateHero();
+}
+
+// ORBIT ECOSYSTEM & MINIMAL CARDS CROSS-INTERACTION
+const orbitStage = document.querySelector(".services-orbit-stage");
+const orbitNodes = document.querySelectorAll(".orbit-node");
+const orbitSquircles = document.querySelectorAll(".orbit-squircle");
+const miniCards = document.querySelectorAll(".service-mini-card");
+
+orbitSquircles.forEach(sq => {
+  const node = sq.closest(".orbit-node");
+  const sId = node ? node.dataset.service : null;
+
+  sq.addEventListener("mouseenter", () => {
+    if (orbitStage) orbitStage.classList.add("is-paused");
+    if (node) node.classList.add("is-highlighted");
+    miniCards.forEach(c => {
+      if (c.dataset.service === sId) {
+        c.classList.add("is-highlighted");
+      } else {
+        c.classList.remove("is-highlighted");
+      }
+    });
+  });
+
+  sq.addEventListener("mouseleave", () => {
+    if (orbitStage) orbitStage.classList.remove("is-paused");
+    if (node) node.classList.remove("is-highlighted");
+    miniCards.forEach(c => c.classList.remove("is-highlighted"));
+  });
+
+  sq.addEventListener("click", () => {
+    miniCards.forEach(c => {
+      if (c.dataset.service === sId) {
+        c.classList.add("is-highlighted");
+        c.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      }
+    });
+  });
+});
+
+miniCards.forEach(card => {
+  card.addEventListener("mouseenter", () => {
+    const sId = card.dataset.service;
+    orbitNodes.forEach(n => {
+      if (n.dataset.service === sId) {
+        n.classList.add("is-highlighted");
+      } else {
+        n.classList.remove("is-highlighted");
+      }
+    });
+  });
+  card.addEventListener("mouseleave", () => {
+    orbitNodes.forEach(n => n.classList.remove("is-highlighted"));
+  });
+});
+
+// HORIZONTAL PATHWAY SCROLL INTERACTION
+const pScroll = document.getElementById("pathwayScroll");
+const pLeft = document.getElementById("pathwayScrollLeft");
+const pRight = document.getElementById("pathwayScrollRight");
+
+if (pScroll && pLeft && pRight) {
+  pLeft.addEventListener("click", () => {
+    pScroll.scrollBy({ left: -260, behavior: "smooth" });
+  });
+  pRight.addEventListener("click", () => {
+    pScroll.scrollBy({ left: 260, behavior: "smooth" });
+  });
+}
+
+// PLAY REAL VIDEO IN MODAL (full inline HTML5 player)
+function playVideoInModal(src, title, desc) {
+  modalKicker.textContent = "03 / Videos & Motion Graphics Archive";
+  modalTitle.textContent = title || "Video";
+
+  const backBtnHTML = activeCollectionKind ? `
+    <div style="display:flex;justify-content:flex-start">
+      <button onclick="returnToCollection()" class="btn ghost" style="padding:6px 14px;font-size:12px;border:1px solid rgba(255,255,255,.15);display:inline-flex;align-items:center;gap:6px">
+        ← Back to Videos &amp; Motion Archive
+      </button>
+    </div>
+  ` : '';
+
+  modalBody.innerHTML = `
+    <div style="display:flex;flex-direction:column;gap:14px">
+      ${backBtnHTML}
+      <div style="position:relative;border-radius:14px;overflow:hidden;background:#000;max-height:72vh;display:flex;align-items:center;justify-content:center">
+        <video id="modalVidPlayer" controls autoplay
+          style="max-width:100%;max-height:70vh;width:100%;outline:none;display:block;border-radius:14px">
+          <source src="${src}" type="video/mp4">
+          Your browser does not support video playback.
+        </video>
+      </div>
+      ${desc ? `<p style="margin:0;color:var(--muted);font-size:13.5px;font-weight:500">${desc}</p>` : ''}
+    </div>
+  `;
+  modal.classList.add("open");
+  document.body.style.overflow = "hidden";
+
+  // Return to archive when modal close button (X) is clicked
+  modalClose.onclick = () => returnToCollection();
+}
+
+// MINI VIDEO THUMB HOVER-AUTOPLAY (folder preview — plays silently while hovering)
+document.querySelectorAll(".folder[data-kind='videos-motion']").forEach(folder => {
+  const vids = folder.querySelectorAll(".mini-vid-thumb");
+  folder.addEventListener("mouseenter", () => {
+    vids.forEach(v => { v.play && v.play().catch(() => {}); });
+  });
+  folder.addEventListener("mouseleave", () => {
+    vids.forEach(v => { if (!v.paused) v.pause(); });
+  });
+});
+</script>
+</body>
+</html>

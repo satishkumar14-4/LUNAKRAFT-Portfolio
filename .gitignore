@@ -1,0 +1,12 @@
+# System & temporary files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.tmp
+*.bak
+.DS_Store
+
+# Git / editor artifacts
+.vscode/
+.idea/
